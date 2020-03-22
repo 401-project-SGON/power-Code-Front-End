@@ -1,0 +1,18 @@
+import { createStore, combineReducers, applyMiddleware } from "redux";
+// import { composeWithDevTools } from "redux-devtools-extension";
+import logger from "redux-logger";
+import thunk from 'redux-thunk'
+import promis from 'redux-promise-middleware'
+
+import reducer from "./reducers.js";
+// import action from "./actions.js";
+
+const middleware = applyMiddleware(promis,thunk,logger);
+
+let reducers = combineReducers({ reducer });
+
+const store = () => {
+  return createStore(reducers, middleware);
+};
+
+export default store();

@@ -1,8 +1,6 @@
 import React from 'react';
-
 import Auth from './components/auth/auth.js';
 import Login from './components/auth/login.js';
-import LoginContext from './components/auth/context.js';
 
 const EditLink = props => {
   return (
@@ -24,12 +22,12 @@ const App =(props)=> {
 
    
     return (
-      <LoginContext>
+     <>
         <Login />
         <hr />
         <EditLink />
         <DeleteLink />
-      </LoginContext>
+     </>
     );
   
 }

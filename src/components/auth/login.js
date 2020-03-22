@@ -1,17 +1,26 @@
 import React from 'react';
-import { LoginContext } from './context.js';
+import {connect} from 'react-redux'
+import cookie from 'react-cookies';
+import {login,logout,validateToken} from '../../store/actions.js'
 
 const If = props => {
   return props.condition ? props.children : null;
 };
 
+
 class Login extends React.Component {
-  static contextType = LoginContext;
 
   constructor(props) {
     super(props);
     this.state = { username: '', password: '' };
   }
+
+  componentDidMount() {
+        const qs = new URLSearchParams(window.location.search);
+        const cookieToken = cookie.load('auth');
+        const token = qs.get('token') || cookieToken || null;
+        this.props.dispatch(validateToken(token));
+      }
 
   handleChange = e => {
     this.setState({ [e.target.name]: e.target.value });
@@ -19,17 +28,17 @@ class Login extends React.Component {
 
   handleSubmit = e => {
     e.preventDefault();
-    this.context.login(this.state.username, this.state.password);
+    this.props.dispatch(login({'username':this.state.username, 'password':this.state.password}))
   };
 
   render() {
     return (
       <>
-        <If condition={this.context.loggedIn}>
-          <button onClick={this.context.logout}>Log Out</button>
+        <If condition={this.props.reducer.loggedIn}>
+          <button onClick={()=>this.props.dispatch(logout())}>Log Out</button>
         </If>
 
-        <If condition={!this.context.loggedIn}>
+        <If condition={!this.props.reducer.loggedIn}>
           <form onSubmit={this.handleSubmit}>
             <input
               placeholder="UserName"
@@ -49,4 +58,10 @@ class Login extends React.Component {
   }
 }
 
-export default Login;
+const mapStateToProps = state => ({
+  reducer: state.reducer
+});
+
+export default connect(
+  mapStateToProps
+)(Login);
