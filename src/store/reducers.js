@@ -70,7 +70,7 @@ export default (state = initialState, action) => {
             state = { ...state, loggedIn: false }
             state = { ...state, token: null }
             state = { ...state, user: {} }
-
+            cookie.remove('auth')
 
             return state
 
