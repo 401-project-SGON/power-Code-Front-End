@@ -78,3 +78,21 @@ export const render = ()=>{
 
     }
 }
+
+export const choose =(payload)=>{
+    return{
+        type:'CHOSECOURSE',
+        payload:payload
+    }
+}
+
+export const levelsRendered =()=>{
+    return{
+        type:'LEVELS_RENDERED'
+    }
+}
+export const levelsNotRendered =()=>{
+    return{
+        type:'LEVELS_NOT_RENDERED'
+    }
+}

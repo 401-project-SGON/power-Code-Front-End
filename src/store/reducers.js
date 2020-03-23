@@ -7,7 +7,9 @@ let initialState = {
     user: {},
     token: '',
     data: [],
-    renderd:false
+    renderd:false,
+    chosen:'',
+    levelsRendered:false
 }
 
 
@@ -96,6 +98,20 @@ export default (state = initialState, action) => {
 
         case 'RENDER':
             return state
+
+        case 'CHOSECOURSE':
+
+            state={...state,chosen:payload}
+            console.log('state.chosen : ', state.chosen);
+            return state
+
+        case 'LEVELS_RENDERED':
+            state = {...state,levelsRendered:true}
+            return state;
+
+        case 'LEVELS_NOT_RENDERED':
+            state = {...state,levelsRendered:false}
+            return state;
         default:
             return state;
     }
