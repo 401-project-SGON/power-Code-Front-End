@@ -5,7 +5,9 @@ import jwt from 'jsonwebtoken';
 let initialState = {
     loggedIn: false,
     user: {},
-    token: ''
+    token: '',
+    data: [],
+    renderd:false
 }
 
 
@@ -74,6 +76,26 @@ export default (state = initialState, action) => {
 
             return state
 
+
+        case 'SIGNUP':
+
+            console.log('payload : ', payload);
+            break
+
+        case 'GETDATA_FULFILLED':
+            let arr
+            console.log('payload : ', payload);
+            payload.forEach(item => {
+                arr = [...state.data, item]
+                state = { ...state, data: arr }
+            })
+            state = { ...state, renderd:true }
+
+            console.log('state : ', state);
+            return state
+
+        case 'RENDER':
+            return state
         default:
             return state;
     }
