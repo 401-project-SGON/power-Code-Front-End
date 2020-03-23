@@ -8,8 +8,8 @@ class CoursesPage extends React.Component {
   constructor(props){
     super (props);
     this.state = {
-      courses:{
-        title:'',
+      course:{
+        title:' ',
       },
     };
   }
@@ -42,7 +42,7 @@ CoursesPage.propTypes = {
 
 function mapStateToProps(state){
   return{
-    courses:state.courses,
+    course:state.course,
   };
 }
 
