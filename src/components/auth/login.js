@@ -1,7 +1,9 @@
+/* eslint-disable comma-dangle */
+/* eslint-disable no-unused-vars */
 import React from 'react';
-import { connect } from 'react-redux'
+import { connect } from 'react-redux';
 import cookie from 'react-cookies';
-import { login, logout, validateToken, signup } from '../../store/actions.js'
+import { login, logout, validateToken, signup } from '../../store/actions.js';
 
 const If = props => {
   return props.condition ? props.children : null;
@@ -28,11 +30,11 @@ class Login extends React.Component {
 
   handleSubmit = e => {
     e.preventDefault();
-    this.props.dispatch(login({ 'username': this.state.username, 'password': this.state.password }))
+    this.props.dispatch(login({ 'username': this.state.username, 'password': this.state.password }));
   };
   handleSubmit_signup = e => {
     e.preventDefault();
-    this.props.dispatch(signup({ 'username': this.state.username, 'password': this.state.password }))
+    this.props.dispatch(signup({ 'username': this.state.username, 'password': this.state.password }));
   };
 
   

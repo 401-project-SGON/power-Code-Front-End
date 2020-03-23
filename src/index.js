@@ -1,15 +1,16 @@
+/* eslint-disable no-unused-vars */
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
-import {BrowserRouter as Router} from 'react-router-dom';
+import { BrowserRouter as Router } from 'react-router-dom';
 
 import './index.css';
 import App from './app';
 import store from './store/store.js';
 
 ReactDOM.render(
-    <Provider store={store}>
-        <Router>
+  <Provider store={store}>
+    <Router>
       <App />
     </Router>
   </Provider>

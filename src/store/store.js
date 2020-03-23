@@ -1,7 +1,8 @@
+/* eslint-disable quotes */
 import { createStore, combineReducers, applyMiddleware } from "redux";
 import logger from "redux-logger";
-import thunk from 'redux-thunk'
-import promis from 'redux-promise-middleware'
+import thunk from 'redux-thunk';
+import promis from 'redux-promise-middleware';
 
 import reducer from "./reducers.js";
 

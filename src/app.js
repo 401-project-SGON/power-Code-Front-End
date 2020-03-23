@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React from 'react';
 import Auth from './components/auth/auth.js';
 import Login from './components/auth/login.js';
@@ -5,9 +6,10 @@ import Data from './components/data/index.js';
 import { Route, Switch } from 'react-router-dom';
 import HomePage from './components/home/home.js';
 import AboutPage from './components/about/about.js';
-import Header from './components/common/header.js';
 import NotFound from './components/notFound.js';
 import CoursesPage from './components/courses/coursesPage.js';
+import Header from './components/header/header.js';
+import './app.scss';
 
 
 const User = props => {

@@ -1,3 +1,4 @@
+/* eslint-disable no-case-declarations */
 
 import cookie from 'react-cookies';
 import jwt from 'jsonwebtoken';

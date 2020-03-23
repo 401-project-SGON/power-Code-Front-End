@@ -1,3 +1,7 @@
+/* eslint-disable comma-dangle */
+/* eslint-disable semi */
+/* eslint-disable indent */
+/* eslint-disable no-unused-vars */
 import React from 'react';
 import { connect } from 'react-redux'
 import { getData } from '../../store/actions.js'
@@ -6,9 +10,9 @@ import { getData } from '../../store/actions.js'
 
 const Data = (props) => {
 
-    return (
+return (
         <section>
-            <button onClick={() => !props.reducer.renderd&&props.getData()}>get courses</button>
+            <button onClick={() => !props.reducer.renderd && props.getData()}>get courses</button>
             <ul>
                 {props.reducer.data.map(item => {
                     console.log('item : ', item);
