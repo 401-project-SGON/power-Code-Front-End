@@ -7,7 +7,8 @@ import HomePage from './components/home/home.js';
 import AboutPage from './components/about/about.js';
 import Header from './components/common/header.js';
 import NotFound from './components/notFound.js';
-import CoursesPage from './components/courses/coursesPage.js';
+import Footer from './components/common/footer';
+import ContactUs from './components/contactus/contactUs.js';
 
 
 const User = props => {
@@ -41,7 +42,7 @@ const App = (props)=> {
       <Switch>
         <Route exact path="/" component={HomePage}/>
         <Route path="/about" component={AboutPage}/>
-        <Route path="/courses" component={CoursesPage}/>
+        <Route path="/contactUs" component={ContactUs}/>
         <Route component={NotFound}/>
       </Switch>
 
@@ -50,6 +51,7 @@ const App = (props)=> {
       <User/>
       <Editor />
       <Admin />
+      <Footer/>
     </>
   );
 
