@@ -15,8 +15,8 @@ let [showScore,setShowScore] =useState(false)
 
     let loc
     if (props.reducer.chosen == 'javaScript') { loc = 0 }
-    if (props.reducer.chosen == 'html') { loc = 1 }
-    if (props.reducer.chosen == 'css') { loc = 2 }
+    if (props.reducer.chosen == 'HTML') { loc = 1 }
+    if (props.reducer.chosen == 'CSS') { loc = 2 }
  
 const renderQuestion=(level)=>{
 
@@ -24,9 +24,10 @@ const renderQuestion=(level)=>{
 console.log('questions : ',questions );
 }
 
-const check = (answer,trueOrNot)=>{
-    if(trueOrNot){setScore(score+1)}
-    setAnswered([...answered,answer])
+const check = (answer,trueOrNot,id)=>{
+    if(trueOrNot==answer){setScore(score+1)}
+    setAnswered([...answered,id])
+    console.log('answered : ', answered);
 }
 
     return (
@@ -53,12 +54,12 @@ const check = (answer,trueOrNot)=>{
                 <ul>
                     {questions&&questions.map(item=>{
                         return(
-                            <If condition={!answered.includes(item.answer)}>
+                            <If condition={!answered.includes(item._id)}>
                                 <Then>
                             <li key={item}>
                                 {item.question}  -- answer: {item.answer}
-                                <button onClick={()=>check(item.answer,true)}>true</button>
-                                <button onClick={()=>check(item.answer,false)}>false</button>
+                                <button onClick={()=>check(item.answer,'true',item._id)}>true</button>
+                                <button onClick={()=>check(item.answer,'false',item._id)}>false</button>
 
                             </li>
                             </Then></If>
