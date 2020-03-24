@@ -65,9 +65,10 @@ const check = (answer,trueOrNot)=>{
                         )
                     })}
                 </ul>
+                <h3>Your Answered :"{answered.length}- question</h3>
                 <button onClick={()=>{setShowScore(true)}}>Show my score</button>
                 <If condition={showScore}><Then>
-                <h3>Your Score is:"{score}</h3>
+                <h3>Your Score is:"{score} / out of {answered.length}</h3>
                 </Then></If>
 
         </section>
