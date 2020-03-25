@@ -2,7 +2,8 @@ import React from 'react';
 import { connect } from 'react-redux'
 import cookie from 'react-cookies';
 import { login, logout, validateToken, signup } from '../../store/actions.js'
-import {Form,Button} from 'react-bootstrap'
+import { Form, Button } from 'react-bootstrap'
+
 
 const If = props => {
   return props.condition ? props.children : null;
@@ -36,11 +37,12 @@ class Login extends React.Component {
     this.props.dispatch(signup({ 'username': this.state.username, 'password': this.state.password }))
   };
 
-  
+
   render() {
     return (
       <>
 
+       
         <If condition={!this.props.reducer.loggedIn}>
 
           <Form onSubmit={this.handleSubmit_signup}>
@@ -77,8 +79,8 @@ class Login extends React.Component {
               name="password"
               onChange={this.handleChange}
             />
-             <Button variant="primary" type="submit">
-    Log in
+            <Button variant="primary" type="submit">
+              Log in
   </Button>
           </form>
         </If>

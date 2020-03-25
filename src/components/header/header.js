@@ -14,9 +14,11 @@ const Header = (props) => {
                     <Nav.Link eventKey="link-1"><NavLink to='/data'>Courses</NavLink></Nav.Link>
                 </Nav.Item>
                 <Nav.Item>
-                    <Nav.Link eventKey="link-2"><NavLink to='/data'><NavLink to='/code'>Code Editor</NavLink></NavLink></Nav.Link>
+                    <Nav.Link eventKey="link-2"><NavLink to='/code'>Code Editor</NavLink></Nav.Link>
                 </Nav.Item>
-                
+                <Nav.Item>
+                    <Nav.Link eventKey="link-3"><NavLink to='/chat'>Let's chat</NavLink></Nav.Link>
+                </Nav.Item>
             </Nav>
            
         </>

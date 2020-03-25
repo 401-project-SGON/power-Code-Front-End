@@ -7,10 +7,15 @@ import Footer from './components/footer/footer.js';
 import {Switch,Route,Link} from "react-router-dom";
 import Cours from './components/course/course.js';
 import Code from './components/codeEditor/codeEditor.js'
+import Chat from './components/chat/chat.js'
 
 const User = props => {
   return (
     <Auth capability="read">
+
+    <Route path='/chat'>
+      <Chat/>
+    </Route>
 
     <Route path='/code' >
       <Code/>
@@ -55,6 +60,7 @@ const App =(props)=> {
         <Editor />
         <Admin />
         <Footer/>
+
       </Route>
      </>
     );

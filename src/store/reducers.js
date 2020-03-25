@@ -112,6 +112,8 @@ export default (state = initialState, action) => {
         case 'LEVELS_NOT_RENDERED':
             state = {...state,levelsRendered:false}
             return state;
+
+       
         default:
             return state;
     }

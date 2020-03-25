@@ -7,6 +7,8 @@ import './index.css';
 import App from './app';
 import store from './store/store.js'
 import 'bootstrap/dist/css/bootstrap.min.css';
+import "react-loader-spinner/dist/loader/css/react-spinner-loader.css"
+
 
 
 ReactDOM.render(
