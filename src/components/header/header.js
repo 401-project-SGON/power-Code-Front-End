@@ -19,6 +19,9 @@ const Header = (props) => {
                 <Nav.Item>
                     <Nav.Link eventKey="link-3"><NavLink to='/chat'>Let's chat</NavLink></Nav.Link>
                 </Nav.Item>
+                <Nav.Item>
+                    <Nav.Link eventKey="link-4"><NavLink to='/user'>My Info</NavLink></Nav.Link>
+                </Nav.Item>
             </Nav>
            
         </>

@@ -4,29 +4,34 @@ import Login from './components/auth/login.js';
 import Data from './components/data/index.js'
 import Header from './components/header/header.js'
 import Footer from './components/footer/footer.js';
-import {Switch,Route,Link} from "react-router-dom";
+import { Switch, Route, Link } from "react-router-dom";
 import Cours from './components/course/course.js';
 import Code from './components/codeEditor/codeEditor.js'
 import Chat from './components/chat/chat.js'
+import UserInfo from './components/userInfo/userInfo.js'
 
 const User = props => {
   return (
     <Auth capability="read">
 
-    <Route path='/chat'>
-      <Chat/>
-    </Route>
-
-    <Route path='/code' >
-      <Code/>
-    </Route>
-
-      <Route path ='/data'>
-      <Data/>
+      <Route path='/user'>
+        <UserInfo />
       </Route>
-     
+
+      <Route path='/chat'>
+        <Chat />
+      </Route>
+
+      <Route path='/code' >
+        <Code />
+      </Route>
+
+      <Route path='/data'>
+        <Data />
+      </Route>
+
       <Route path='/course'>
-        <Cours/>
+        <Cours />
       </Route>
     </Auth>
   );
@@ -46,25 +51,25 @@ const Admin = props => {
   );
 };
 
-const App =(props)=> {
+const App = (props) => {
 
-   
-    return (
-     <>
+
+  return (
+    <>
       <Route path='/'>
-   
+
         <Header />
         <Login />
         <hr />
-        <User/>
+        <User />
         <Editor />
         <Admin />
-        <Footer/>
+        <Footer />
 
       </Route>
-     </>
-    );
-  
+    </>
+  );
+
 }
 
 export default App;
