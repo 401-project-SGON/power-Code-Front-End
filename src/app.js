@@ -6,6 +6,8 @@ import Header from './components/header/header.js'
 import Footer from './components/footer/footer.js';
 import {Switch,Route,Link} from "react-router-dom";
 import Cours from './components/course/course.js';
+import Slide from './components/slide/App.js';
+
 
 
 const User = props => {
@@ -39,6 +41,7 @@ const App =(props)=> {
     return (
      <>
       <Route path='/'>
+        <Slide />
         <Header />
         <Login />
         <hr />
