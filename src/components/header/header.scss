@@ -1,10 +1,18 @@
 @import url("https://fonts.googleapis.com/css?family=Bellota&display=swap");
+
+
+header{
+    margin-top: -90px;
+}
+
+
+
 * {
-    margin: 0;
-    padding: 0;
+    // margin: 0;
+    // padding: 0;
     // font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     // color: rgb(25, 74, 119);
-    z-index: 0px;
+    // margin-top: -500px;
 }
 
 
@@ -14,29 +22,30 @@ p {
 }
 
 nav{
-    margin-top: -580px;
+    margin-top: -1650px;
     z-index: 1px;
-font-size: 25px;
-font-family: 'Bellota', cursive;
-color: white;
-
-margin-left: 1000px;
-
+    font-size: 28px;
+    font-family: 'Bellota', cursive;
+    color:rgb(199, 199, 206);
+    margin-left: 1000px;
 }
 
 
-#sohad {
-    margin-left: 500px;
-}
-img {
-    width: 380px;
-}
-// a{
-//     color:white;
-//     text-decoration: none;
-
+// #sohad {
+//     margin-left: -300px;
 
 // }
+// img {
+//     width: 380px;
+//     // margin-top: -500px;
+// }
+a{
+    // margin-top: -1000px;
+    color:rgb(179, 179, 182);
+    text-decoration: none;
+
+
+}
 
 div {
     display: block;

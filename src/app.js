@@ -43,10 +43,11 @@ const App =(props)=> {
    
     return (
      <>
-      <Route path='/'>
+      <Route path='/' >
+      <Route path="/]" component={App} />
 
         <Slide />
-        <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+
         <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
         <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
 
@@ -57,7 +58,12 @@ const App =(props)=> {
         </Switch>
 
         <Header />
-        <Login />
+
+
+        
+        <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+
+         <Login />
         <hr />
         <User/>
         <Editor />
