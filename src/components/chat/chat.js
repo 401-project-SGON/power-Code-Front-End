@@ -7,7 +7,7 @@ const Chat = () =>{
 
     return(
 
-        <iframe src={process.env.CHAT}/>
+        <iframe src='https://chat-server-obada.herokuapp.com'/>
 
     )
 }
