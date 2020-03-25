@@ -7,6 +7,9 @@ import Footer from './components/footer/footer.js';
 import {Switch,Route,Link} from "react-router-dom";
 import Cours from './components/course/course.js';
 import Slide from './components/slide/App.js';
+import AboutPage from './components/about/about.js';
+import ContactUs from './components/contact/contact.js';
+import HomePage from './home/home.js';
 
 
 
@@ -41,14 +44,25 @@ const App =(props)=> {
     return (
      <>
       <Route path='/'>
+
         <Slide />
+        <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+        <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+        <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+
+        <Switch>
+          <Route exact path="/" component={HomePage} />
+          <Route path="/about" component={AboutPage} />
+          <Route path="/contactUs" component={ContactUs} />
+        </Switch>
+
         <Header />
         <Login />
         <hr />
         <User/>
         <Editor />
         <Admin />
-        <Footer/>
+        {/* <Footer/> */}
       </Route>
      </>
     );

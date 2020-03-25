@@ -3,6 +3,7 @@
 //===========================================
 import React, { Component } from "react";
 import Slideshow from "./Slideshow";
+import { NavLink } from 'react-router-dom'
 import slide1 from "./assets/slide1.jpg";
 import slide2 from "./assets/slide2.jpg";
 import slide3 from "./assets/slide3.jpg";
@@ -34,6 +35,14 @@ class App extends Component {
                 {/* <div className={s.header}>Automatic Slideshow Carousel</div> */}
                 <div className={s.main}>
                     <Slideshow slides={slides} />
+                    {/* <img className={s.sohad } src={require('../../img/powerLogo.png')} /> */}
+                    <nav style={{ position: 'relative', zIndex: '2' }}>
+                        <NavLink to="/" exact>Home</NavLink>{' |     '}
+
+                        <NavLink to="/about" exact>About</NavLink>{' | '}
+
+                        <NavLink to="/contactUs" >Contact Us</NavLink>
+                    </nav>
                 </div>
             </div>
         );
