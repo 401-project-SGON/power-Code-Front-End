@@ -6,6 +6,8 @@ import { BrowserRouter } from 'react-router-dom';
 import './index.css';
 import App from './app';
 import store from './store/store.js'
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 
 ReactDOM.render(
 <Provider store={store}>
