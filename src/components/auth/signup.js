@@ -1,11 +1,10 @@
 import React from 'react';
 import { connect } from 'react-redux'
 import cookie from 'react-cookies';
-import { login, logout, validateToken, signup } from '../../store/actions.js'
+import { login, validateToken, signup,saveImage } from '../../store/actions.js'
 import { Form, Button } from 'react-bootstrap'
 import './login.css'
 import Example from './../modal/modal.js'
-
 
 
 const If = props => {
@@ -20,6 +19,23 @@ class Signup extends React.Component {
     this.state = { username: '', password: '' ,email:'',phone:'',url:''};
   }
 
+ handleImage =(e)=>{
+    
+    
+    const files = Array.from(e.target.files)
+    const formData = new FormData()
+    files.forEach((file, i) => {
+      formData.append(i, file)
+    })
+   
+    this.props.dispatch(saveImage(formData))
+    .then((data)=>{
+        this.setState({ url:data.value[0].url })
+    })
+
+}
+
+
   componentDidMount() {
     const qs = new URLSearchParams(window.location.search);
     const cookieToken = cookie.load('auth');
@@ -33,16 +49,17 @@ class Signup extends React.Component {
 
   handleSubmit = e => {
       if(e) e.preventDefault();
-   
     this.props.dispatch(login({ 'username': this.state.username, 'password': this.state.password }))
   };
   handleSubmit_signup = e => {
     if(e) e.preventDefault();
+
     this.props.dispatch(signup(
       { 'username': this.state.username, 
       'password': this.state.password ,
       'email': this.state.email,
       'phone': this.state.phone,
+      'url':this.state.url
 
     }))
   };
@@ -71,6 +88,11 @@ class Signup extends React.Component {
               placeholder="phone number"
               name="phone"
               onChange={this.handleChange}
+            />
+            <input
+              type='file'
+              name="url"
+              onChange={this.handleImage}
             />
             <input
               placeholder="password"

@@ -34,6 +34,7 @@ export default (state = initialState, action) => {
             state = { ...state, token: token }
             state = { ...state, loggedIn: true }
             state = { ...state, user }
+            console.log('user : ', user);
 
             return state;
 
@@ -112,6 +113,14 @@ export default (state = initialState, action) => {
         case 'LEVELS_NOT_RENDERED':
             state = {...state,levelsRendered:false}
             return state;
+
+        case 'SAVEIMAGE_FULFILLED':
+
+            console.log('payload : ', payload);
+        // state={...state,url:payload.value[0].url}
+        
+
+        return state
 
        
         default:

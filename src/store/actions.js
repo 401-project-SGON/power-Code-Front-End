@@ -98,3 +98,17 @@ export const levelsNotRendered =()=>{
     }
 }
 
+export const saveImage = (payload)=>{
+console.log('payload : ', payload);
+    return{
+        type:'SAVEIMAGE',
+        payload:fetch(`${API}/image`, {
+            method: 'POST',
+            body: payload
+          })
+          .then(res => res.json())
+        //   .then(data=>data[0].url)
+         
+    }
+}
+

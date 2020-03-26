@@ -20,7 +20,7 @@ function Example(props) {
           {props.name}
         </Button>
   
-        <Modal show={show} onHide={handleClose}>
+        <Modal show={show} onHide={handleClose2}>
           <Modal.Header closeButton>
             <Modal.Title>Modal heading</Modal.Title>
           </Modal.Header>
