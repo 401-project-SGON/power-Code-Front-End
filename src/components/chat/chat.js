@@ -1,4 +1,5 @@
 import React from 'react'
+import './chat.css'
 
 const Chat = () =>{
 
@@ -7,7 +8,7 @@ const Chat = () =>{
 
     return(
 
-        <iframe src='https://chat-server-obada.herokuapp.com'/>
+        <iframe className='chatBox' src='https://chat-server-obada.herokuapp.com'/>
 
     )
 }

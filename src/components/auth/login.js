@@ -3,6 +3,9 @@ import { connect } from 'react-redux'
 import cookie from 'react-cookies';
 import { login, logout, validateToken, signup } from '../../store/actions.js'
 import { Form, Button } from 'react-bootstrap'
+import './login.css'
+import Example from './../modal/modal.js'
+
 
 
 const If = props => {
@@ -14,7 +17,7 @@ class Login extends React.Component {
 
   constructor(props) {
     super(props);
-    this.state = { username: '', password: '' };
+    this.state = { username: '', password: '', email: '', phone: '', url: '' };
   }
 
   componentDidMount() {
@@ -29,62 +32,43 @@ class Login extends React.Component {
   };
 
   handleSubmit = e => {
-    e.preventDefault();
+    if(e)e.preventDefault();
+    
     this.props.dispatch(login({ 'username': this.state.username, 'password': this.state.password }))
   };
-  handleSubmit_signup = e => {
-    e.preventDefault();
-    this.props.dispatch(signup({ 'username': this.state.username, 'password': this.state.password }))
-  };
+  
 
 
   render() {
     return (
       <>
+      <If condition={!this.props.reducer.loggedIn}>
+      <Example buttonHandle={this.handleSubmit} button={'SignIn'} name='SignIn'>
 
-       
-        <If condition={!this.props.reducer.loggedIn}>
+     
+        <section className='form'>
 
-          <Form onSubmit={this.handleSubmit_signup}>
-            <input
-              placeholder="UserName"
-              name="username"
-              onChange={this.handleChange}
-            />
-            <input
-              placeholder="password"
-              name="password"
-              onChange={this.handleChange}
-            />
-            <button>signup</button>
-          </Form>
+          
+            <Form className='form2' onSubmit={this.handleSubmit}>
+              <Form.Group controlId="formBasicEmail">
+                <Form.Label>Username</Form.Label>
+                <Form.Control size="sm" name='username' onChange={this.handleChange} placeholder="Enter username" />
+              </Form.Group>
+              <Form.Group controlId="formBasicPassword">
+                <Form.Label>Password</Form.Label>
+                <Form.Control size="sm" name='password' onChange={this.handleChange} type="password" placeholder="Password" />
+              </Form.Group>
 
+            </Form>
+         
+        </section>
+        </Example>
         </If>
-
-
-        <If condition={this.props.reducer.loggedIn}>
-          <button onClick={() => this.props.dispatch(logout())}>Log Out</button>
-
-        </If>
-
-        <If condition={!this.props.reducer.loggedIn}>
-          <form onSubmit={this.handleSubmit}>
-            <input
-              placeholder="UserName"
-              name="username"
-              onChange={this.handleChange}
-            />
-            <input
-              placeholder="password"
-              name="password"
-              onChange={this.handleChange}
-            />
-            <Button variant="primary" type="submit">
-              Log in
-  </Button>
-          </form>
-        </If>
-      </>
+         <If condition={this.props.reducer.loggedIn}>
+         <Button variant="secondary" onClick={() => this.props.dispatch(logout())}>Log Out</Button>
+        
+       </If>
+       </>
     );
   }
 }

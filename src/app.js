@@ -9,10 +9,14 @@ import Cours from './components/course/course.js';
 import Code from './components/codeEditor/codeEditor.js'
 import Chat from './components/chat/chat.js'
 import UserInfo from './components/userInfo/userInfo.js'
+import Example from './components/modal/modal.js'
+import Signup from './components/auth/signup.js'
 
 const User = props => {
   return (
     <Auth capability="read">
+
+    
 
       <Route path='/user'>
         <UserInfo />
@@ -57,9 +61,10 @@ const App = (props) => {
   return (
     <>
       <Route path='/'>
-
+      <Signup/>
+      <Login />
         <Header />
-        <Login />
+        
         <hr />
         <User />
         <Editor />
