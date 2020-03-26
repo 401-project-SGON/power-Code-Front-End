@@ -10,6 +10,7 @@ import Slide from './components/slide/App.js';
 import AboutPage from './components/about/about.js';
 import ContactUs from './components/contact/contact.js';
 import HomePage from './home/home.js';
+import Videoh from './components/video/homeVideo.js';
 
 
 
@@ -68,7 +69,8 @@ const App =(props)=> {
         <User/>
         <Editor />
         <Admin />
-        {/* <Footer/> */}
+        <Videoh />
+        <Footer/>
       </Route>
      </>
     );

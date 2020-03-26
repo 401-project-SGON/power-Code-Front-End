@@ -5,18 +5,6 @@ header{
     margin-top: -90px;
 }
 
-
-
-* {
-    // margin: 0;
-    // padding: 0;
-    // font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    // color: rgb(25, 74, 119);
-    // margin-top: -500px;
-}
-
-
-
 p {
     color: black;
 }
@@ -26,25 +14,13 @@ nav{
     z-index: 1px;
     font-size: 28px;
     font-family: 'Bellota', cursive;
-    color:rgb(199, 199, 206);
+    color:rgb(40, 114, 143);
     margin-left: 1000px;
 }
 
-
-// #sohad {
-//     margin-left: -300px;
-
-// }
-// img {
-//     width: 380px;
-//     // margin-top: -500px;
-// }
 a{
-    // margin-top: -1000px;
-    color:rgb(179, 179, 182);
+    color:rgb(40, 114, 143);
     text-decoration: none;
-
-
 }
 
 div {
@@ -56,66 +32,30 @@ div {
     margin-right: -15px;
 }
 
-/*====== WIDTH ======*/
-// .screenW {
-//     width: 100vw;
-// }
-
-
-
-
 // slide width
 .fullW {
     width: 100%;
 }
-/*====== HEIGHT ======*/
-// 
-
-
 
 // slide size
 .fullH {
     height: 630px;
 }
 
-
-
 //point position
 .height70 {
     height: 150px;
 }
 
-
-
-
-
 /*====== BG COLOR ======*/
-// .dGray {
-//     background-color: rgb(153, 155, 156);
-    
-// }
-
-
-
-// .white {
-//     // background-color: rgb(25, 74, 119);
-// }
-
-
 .white50 {
     background-color: #eeebeb;
 }
-
-
-
-
 
 /*====== Link FONT ======*/
 .fSize2 {
     font-size: 20px;
 }
-
-
 
 /*====== IMAGE ======*/
 .imgCover {
@@ -123,31 +63,17 @@ div {
 
 }
 
-
-
 /*====== OVERFLOW ======*/
 .overflowH {
     overflow: hidden;
 }
-
-
-
-
-
-
-
 
 /*====== TRANSITIONS ======*/
 .transition1l {
     transition: left 1.5s ease-in-out;
 }
 
-
-
-
-
 /*====== POSITION ======*/
-
 
 .abs {
     position: absolute;
@@ -167,8 +93,6 @@ div {
 .bot0 {
     bottom: 0;
 }
-
-
 
 /*====== FLEX ======*/
 .df {
@@ -196,36 +120,8 @@ div {
 }
 
 
-
-
-
-
-
-// .flex1 {
-//     flex: 1;
-// }
 .flex8 {
     flex: 8;
 }
 
 
-/*====== CUSTOM ======*/
-// .dot {
-//     width: 10px;
-//     height: 10px;
-//     border-radius: 5px;
-//     transition: background-color 1s ease-in-out;
-// }
-
-
-
-
-        //   &:hover {
-        //     background-color: rgb(35, 28, 71);
-        //   }
-  
-        
-        
-        //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////@extend
-        
-        
