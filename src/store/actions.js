@@ -1,3 +1,4 @@
+/* eslint-disable camelcase */
 
 const API = process.env.REACT_APP_API;
 
@@ -19,6 +20,8 @@ export const login = (user_pass_name) => {
       .catch(console.error),
   };
 };
+
+
 
 
 export const validateToken = (token) => {
@@ -56,6 +59,14 @@ export const signup = (user_pass_name)=>{
 
   };
 
+};
+
+export const googleOauth = ()=>{
+  return{
+    type:'OAUTH',
+    payload: fetch(`${API}/googal`
+      .then(response => response.text())
+      .then(response => {console.log("naseem", respons)};
 };
 
 export const getData = ()=>{

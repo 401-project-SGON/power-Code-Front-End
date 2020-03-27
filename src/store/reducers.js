@@ -82,6 +82,11 @@ export default (state = initialState, action) => {
     console.log('payload : ', payload);
     break;
 
+
+  case 'OAUTH':
+    console.log('payload : ', payload);
+    break;
+
   case 'GETDATA_FULFILLED':
     let arr;
     console.log('payload : ', payload);
