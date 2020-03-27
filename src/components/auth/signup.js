@@ -2,9 +2,10 @@ import React from 'react';
 import { connect } from 'react-redux'
 import cookie from 'react-cookies';
 import { login, validateToken, signup,saveImage } from '../../store/actions.js'
-import { Form, Button } from 'react-bootstrap'
+import { Form, Button ,Spinner} from 'react-bootstrap'
 import './login.css'
 import Example from './../modal/modal.js'
+import { Then } from '../if/index.js';
 
 
 const If = props => {
@@ -94,6 +95,11 @@ class Signup extends React.Component {
               name="url"
               onChange={this.handleImage}
             />
+            <If condition={this.props.reducer.imageUploading}>
+             
+              <Spinner animation="border" />
+             
+            </If>
             <input
               placeholder="password"
               name="password"

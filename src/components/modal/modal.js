@@ -16,7 +16,7 @@ function Example(props) {
   
     return (
       <>
-        <Button variant="primary" onClick={handleShow}>
+        <Button variant="outline-info" onClick={handleShow}>
           {props.name}
         </Button>
   

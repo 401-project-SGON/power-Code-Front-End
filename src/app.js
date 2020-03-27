@@ -1,6 +1,5 @@
 import React from 'react';
 import Auth from './components/auth/auth.js';
-import Login from './components/auth/login.js';
 import Data from './components/data/index.js'
 import Header from './components/header/header.js'
 import Footer from './components/footer/footer.js';
@@ -9,7 +8,6 @@ import Cours from './components/course/course.js';
 import Code from './components/codeEditor/codeEditor.js'
 import Chat from './components/chat/chat.js'
 import UserInfo from './components/userInfo/userInfo.js'
-import Signup from './components/auth/signup.js'
 import AdminTool from './components/adminTool/adminTool.js'
 
 const User = props => {
@@ -51,7 +49,7 @@ const Editor = props => {
 const Admin = props => {
   return (
     <Auth capability="delete">
-    <AdminTool/>
+<AdminTool/>
 
     </Auth>
   );
@@ -63,8 +61,6 @@ const App = (props) => {
   return (
     <>
       <Route path='/'>
-        <Signup />
-        <Login />
         <Header />
 
         <hr />

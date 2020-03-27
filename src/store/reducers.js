@@ -10,7 +10,9 @@ let initialState = {
     renderd:false,
     chosen:'',
     levelsRendered:false,
-    users:[]
+    users:[],
+    imageRendered:false,
+    imageUploading:false
 }
 
 
@@ -115,7 +117,19 @@ export default (state = initialState, action) => {
             state = {...state,levelsRendered:false}
             return state;
 
+        case 'SAVEIMAGE_PENDING':
+
+            
+            state = {...state,imageUploading:true}
+            console.log('payload : ', payload);
+            // state={...state,url:payload.value[0].url}
+            
+    
+        return state
         case 'SAVEIMAGE_FULFILLED':
+
+            state = {...state,imageUploading:false}
+            state  = {...state,imageRendered:true}
 
             console.log('payload : ', payload);
         // state={...state,url:payload.value[0].url}
