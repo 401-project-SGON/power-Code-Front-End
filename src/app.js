@@ -10,13 +10,13 @@ import Code from './components/codeEditor/codeEditor.js'
 import Chat from './components/chat/chat.js'
 import UserInfo from './components/userInfo/userInfo.js'
 import Signup from './components/auth/signup.js'
+import AdminTool from './components/adminTool/adminTool.js'
 
 const User = props => {
   return (
     <Auth capability="read">
 
-    
-
+    <Switch>
       <Route path='/user'>
         <UserInfo />
       </Route>
@@ -36,6 +36,7 @@ const User = props => {
       <Route path='/course'>
         <Cours />
       </Route>
+      </Switch>
     </Auth>
   );
 };
@@ -50,6 +51,8 @@ const Editor = props => {
 const Admin = props => {
   return (
     <Auth capability="delete">
+    <AdminTool/>
+
     </Auth>
   );
 };
@@ -60,10 +63,10 @@ const App = (props) => {
   return (
     <>
       <Route path='/'>
-      <Signup/>
-      <Login />
+        <Signup />
+        <Login />
         <Header />
-        
+
         <hr />
         <User />
         <Editor />

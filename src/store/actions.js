@@ -112,3 +112,16 @@ console.log('payload : ', payload);
     }
 }
 
+export const getUsers = ()=>{
+    return{
+        type:'GETUSERS',
+        payload: fetch(`${API}/users`)
+            .then(response => {
+               return response.json()
+            })
+            .catch(console.error)
+            
+        }  
+    
+}
+

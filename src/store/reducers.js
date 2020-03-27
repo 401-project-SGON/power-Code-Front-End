@@ -9,7 +9,8 @@ let initialState = {
     data: [],
     renderd:false,
     chosen:'',
-    levelsRendered:false
+    levelsRendered:false,
+    users:[]
 }
 
 
@@ -122,6 +123,14 @@ export default (state = initialState, action) => {
 
         return state
 
+        case 'GETUSERS_FULFILLED':
+            let arr2
+            payload.forEach(item => {
+                arr2 = [...state.users, item]
+                state = { ...state, users: arr2 }
+            })
+            // console.log('state. : ', state.);
+            return state;
        
         default:
             return state;
