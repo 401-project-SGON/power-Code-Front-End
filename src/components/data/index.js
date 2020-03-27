@@ -1,20 +1,18 @@
 import React, { useEffect, useState } from 'react';
 import { connect } from 'react-redux'
 import { getData, choose, levelsRendered } from '../../store/actions.js'
-import { Switch, Route, Link, NavLink } from "react-router-dom";
+import {  NavLink } from "react-router-dom";
 import { If, Then } from '../if'
+import {Spinner} from 'react-bootstrap'
 import './data.css'
-import Loader from 'react-loader-spinner'
 
 
 
 const Data = (props) => {
 
-    const [rend, setRend] = useState(false)
 
     useEffect(() => {
-        if (!props.reducer.renderd) { props.getData().then(setRend(true)) }
-        setRend(true)
+        if (!props.reducer.renderd) { props.getData()}
     }, [])
 
     return (
@@ -22,10 +20,11 @@ const Data = (props) => {
 
             {/* <button onClick={() => !props.reducer.renderd&&props.getData()}>get courses</button> */}
 
-            <If condition={!rend}>
+            <If condition={props.reducer.courseRendering}>
                 <Then>
-                <Loader type="ThreeDots" color="#somecolor" height={80} width={80} />
-
+                <Spinner animation="grow" />
+                <Spinner animation="grow" />
+                <Spinner animation="grow" />
 
                 </Then>
             </If>

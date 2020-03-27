@@ -11,8 +11,8 @@ let initialState = {
     chosen:'',
     levelsRendered:false,
     users:[],
-    imageRendered:false,
-    imageUploading:false
+    imageUploading:false,
+    courseRendering:false
 }
 
 
@@ -88,6 +88,13 @@ export default (state = initialState, action) => {
             console.log('payload : ', payload);
             break
 
+        case 'GETDATA_PENDING':
+               
+                   
+            state = { ...state, courseRendering:true }
+    
+            return state
+            
         case 'GETDATA_FULFILLED':
             let arr
             console.log('payload : ', payload);
@@ -96,6 +103,7 @@ export default (state = initialState, action) => {
                 state = { ...state, data: arr }
             })
             state = { ...state, renderd:true }
+            state = { ...state, courseRendering:false }
 
             console.log('state : ', state);
             return state
@@ -129,7 +137,6 @@ export default (state = initialState, action) => {
         case 'SAVEIMAGE_FULFILLED':
 
             state = {...state,imageUploading:false}
-            state  = {...state,imageRendered:true}
 
             console.log('payload : ', payload);
         // state={...state,url:payload.value[0].url}

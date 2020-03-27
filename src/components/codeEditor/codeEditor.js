@@ -17,6 +17,7 @@ import"codemirror/addon/edit/closetag.js";
 import 'codemirror/mode/htmlmixed/htmlmixed';
 import 'codemirror/mode/css/css';
 import 'codemirror/mode/javascript/javascript';
+import './codeEditor.css'
 
 class CodeEditor extends Component {
   constructor() {
