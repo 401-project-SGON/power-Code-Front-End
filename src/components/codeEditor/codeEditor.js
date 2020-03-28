@@ -20,8 +20,8 @@ import 'codemirror/mode/javascript/javascript';
 import './codeEditor.css'
 
 class CodeEditor extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       id: '',
       html: '',
@@ -38,6 +38,10 @@ class CodeEditor extends Component {
     this.setState({
       id: pushid(),
     });
+    if(this.props.code){
+      this.setState({html:this.props.code})
+    }
+
   }
 
   runCode = () => {

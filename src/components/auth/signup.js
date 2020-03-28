@@ -69,7 +69,7 @@ class Signup extends React.Component {
   render() {
     return (
         <If condition={!this.props.reducer.loggedIn}>
-        <Example buttonHandle={this.handleSubmit_signup} button={'signup'} name='SignUp'>
+        <Example buttonHandle={this.handleSubmit_signup} button={'signup'} name='SignUp' closehand={this.props.reducer.signing}>
 
       <section className='form'>
        
@@ -105,9 +105,22 @@ class Signup extends React.Component {
               name="password"
               onChange={this.handleChange}
             />
-            {/* <Button variant="primary" type="submit">
-            signup
-            </Button> */}
+            
+
+            
+            <If condition={this.props.reducer.signing}>
+             
+             <Spinner animation="border" />
+            
+           </If>
+           <If condition={this.props.reducer.signup}>
+             
+             <h4>greate! register success</h4>
+            
+           </If>
+
+           
+
           </Form>
 
        

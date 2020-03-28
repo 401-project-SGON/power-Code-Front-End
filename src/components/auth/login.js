@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux'
 import cookie from 'react-cookies';
 import { login, logout, validateToken, signup } from '../../store/actions.js'
-import { Form, Button } from 'react-bootstrap'
+import { Form, Button,Spinner } from 'react-bootstrap'
 import './login.css'
 import Example from './../modal/modal.js'
 
@@ -36,14 +36,14 @@ class Login extends React.Component {
     
     this.props.dispatch(login({ 'username': this.state.username, 'password': this.state.password }))
   };
-  
+ 
 
 
   render() {
     return (
       <>
       <If condition={!this.props.reducer.loggedIn}>
-      <Example buttonHandle={this.handleSubmit} button={'SignIn'} name='SignIn'>
+      <Example buttonHandle={this.handleSubmit} button={'SignIn'} name='SignIn' closehand={this.props.reducer.signing}>
 
      
         <section className='form'>
@@ -60,7 +60,9 @@ class Login extends React.Component {
               </Form.Group>
 
             </Form>
-         
+         <If condition={this.props.reducer.signing}>
+         <Spinner animation="border" />
+         </If>
         </section>
         </Example>
         </If>

@@ -13,7 +13,9 @@ let initialState = {
     users:[],
     imageUploading:false,
     courseRendering:false,
-    selectedSubject:{}
+    selectedSubject:{},
+    signing:false,
+    signup:false
 }
 
 
@@ -39,41 +41,47 @@ export default (state = initialState, action) => {
             state = { ...state, loggedIn: true }
             state = { ...state, user }
             console.log('user : ', user);
+            state={...state,signing:false}
+
+            return state;
+
+
+            case "LOGIN_PENDING":
+            
+            state={...state,signing:true}
 
             return state;
 
 
 
 
-        case 'VALIDATE_TOKEN':
-            console.log('validate token ');
-            try {
-                console.log('token : ', payload);
-                let user = jwt.verify(payload, process.env.REACT_APP_SECRET);
-                console.log('user : ', user);
-                state = { ...state, loggedIn: true }
-                cookie.save('auth', payload)
-                state = { ...state, token: payload }
-                state = { ...state, loggedIn: true }
-                state = { ...state, user }
-                return state;
-            }
-            catch (e) {
-                console.log('e : ', e);
+            case 'VALIDATE_TOKEN':
+                try {
+                    let user = jwt.verify(payload, process.env.REACT_APP_SECRET);
+                    console.log('user : ', user);
+                    state = { ...state, loggedIn: true }
+                    cookie.save('auth', payload)
+                    state = { ...state, token: payload }
+                    state = { ...state, loggedIn: true }
+                    state = { ...state, user }
+                    return state;
+                }
+                catch (e) {
+                    console.log('e : ', e);
+                    state.loggedIn = false;
+                    state.token = null;
+                    state.user = {}
+    
+                    return state;
+                }
+    
+            case 'LOGIN_REJECTED':
+    
                 state.loggedIn = false;
                 state.token = null;
                 state.user = {}
-
+    
                 return state;
-            }
-
-        case 'LOGIN_REJECTED':
-
-            state.loggedIn = false;
-            state.token = null;
-            state.user = {}
-
-            return state;
 
         case 'LOGOUT':
             state = { ...state, loggedIn: false }
@@ -84,11 +92,19 @@ export default (state = initialState, action) => {
             return state
 
 
-        case 'SIGNUP':
+        case 'SIGNUP_PENDING':
 
-            console.log('payload : ', payload);
-            break
+            state={...state,signing:true}
+            console.log('state.signing : ', state.signing);
+            return state
 
+        case 'SIGNUP_FULFILLED':
+
+            state={...state,signing:false}
+            state={...state,signup:true}
+
+                
+            return state
         case 'GETDATA_PENDING':
                
                    
@@ -98,15 +114,12 @@ export default (state = initialState, action) => {
             
         case 'GETDATA_FULFILLED':
             let arr
-            console.log('payload : ', payload);
             payload.forEach(item => {
                 arr = [...state.data, item]
                 state = { ...state, data: arr }
             })
             state = { ...state, renderd:true }
             state = { ...state, courseRendering:false }
-
-            console.log('state : ', state);
             return state
 
         case 'RENDER':
@@ -130,8 +143,6 @@ export default (state = initialState, action) => {
 
             
             state = {...state,imageUploading:true}
-            console.log('payload : ', payload);
-            // state={...state,url:payload.value[0].url}
             
     
         return state
@@ -140,7 +151,6 @@ export default (state = initialState, action) => {
             state = {...state,imageUploading:false}
 
             console.log('payload : ', payload);
-        // state={...state,url:payload.value[0].url}
         
 
         return state
@@ -151,7 +161,6 @@ export default (state = initialState, action) => {
                 arr2 = [...state.users, item]
                 state = { ...state, users: arr2 }
             })
-            // console.log('state. : ', state.);
             return state;
 
         case 'SELECTSUBJECT':

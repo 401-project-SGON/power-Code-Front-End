@@ -1,5 +1,5 @@
 import React from 'react'
-import { NavLink } from 'react-router-dom'
+import { NavLink ,Link} from 'react-router-dom'
 import { Nav, Navbar, Form, Button, FormControl,NavDropdown } from 'react-bootstrap'
 import { connect } from 'react-redux'
 import { If, Then } from './../if'
@@ -24,19 +24,22 @@ const Header = (props) => {
                 </Nav>
                 <Form inline>
                     <FormControl type="text" placeholder="Search" className="mr-sm-2" />
-                    <Button variant="primary">Search</Button>
+                    <Button variant="primary">Search</Button>{' _ '}
                     <Signup />
                     <Login />
 
                     <If condition={props.reducer.user.url}>
                         <Then>
                             <NavDropdown title={props.reducer.user.username} id="basic-nav-dropdown">
-                                <NavDropdown.Item ><NavLink to='/user'>My Info</NavLink></NavDropdown.Item>
+                                <NavDropdown.Item ><NavLink id="RouterNavLink" to='/user'>My Info</NavLink></NavDropdown.Item>
                                 
                                 <NavDropdown.Divider />
                                 <NavDropdown.Item ><img src={props.reducer.user.url} height='50' width='50' /></NavDropdown.Item>
+                                
+
                             </NavDropdown>
                             <img src={props.reducer.user.url} height='45' width='45' />
+
 
                             
                         </Then>

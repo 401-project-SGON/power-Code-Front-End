@@ -16,9 +16,9 @@ const Subject = (props) => {
 
             <p>{props.reducer.selectedSubject.explain}</p>
 
-            <p>example:<br /> {props.reducer.selectedSubject.example}</p>
+            <code> {props.reducer.selectedSubject.example}</code>
 
-            <Code />
+            <Code code={props.reducer.selectedSubject.example}/>
 
 
 

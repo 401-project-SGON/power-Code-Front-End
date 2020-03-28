@@ -6,8 +6,11 @@ import {Button,Modal} from 'react-bootstrap'
 function Example(props) {
     const [show, setShow] = useState(false);
   
-    const handleClose = () => {setShow(false);
+    const handleClose = () => {
+      
       props.buttonHandle();
+      if(props.closehand)setShow(false)
+      // setShow(false);
     }
     const handleClose2 = () => {setShow(false);
     }
