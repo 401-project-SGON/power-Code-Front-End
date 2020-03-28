@@ -1,6 +1,6 @@
 
-// const API = process.env.REACT_APP_API;
-const API = 'http://localhost:3002'
+const API = process.env.REACT_APP_API;
+// const API = 'http://localhost:3002'
 
 export const login = (user_pass_name) => {
     return{
@@ -125,3 +125,9 @@ export const getUsers = ()=>{
     
 }
 
+export const selectSubject = (payload)=>{
+    return{
+        type:'SELECTSUBJECT',
+        payload:payload
+    }
+}

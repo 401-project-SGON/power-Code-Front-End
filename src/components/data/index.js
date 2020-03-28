@@ -1,58 +1,109 @@
 import React, { useEffect, useState } from 'react';
 import { connect } from 'react-redux'
-import { getData, choose, levelsRendered } from '../../store/actions.js'
-import {  NavLink } from "react-router-dom";
-import { If, Then } from '../if'
-import {Spinner} from 'react-bootstrap'
+import { getData, choose, levelsRendered ,selectSubject} from '../../store/actions.js'
+import { NavLink } from "react-router-dom";
+import { Then } from '../if'
+import { Spinner } from 'react-bootstrap'
 import './data.css'
 
 
 
+const If = props => {
+    return props.condition ? props.children : null;
+};
+
+
 const Data = (props) => {
 
+    const [selectCourse, setSelect] = useState('')
+    const [overview, setoverview] = useState('')
+    const [levels, setLevel] = useState([])
+    const [subjects, setSubjects] = useState([])
+    const [showOver, setShowOver] = useState(false)
 
+
+    const chooseCourse = (course) => {
+        setShowOver(true)
+        setSelect(course);
+        setoverview(course.overview)
+        setLevel(course.levels)
+        console.log('levels : ', levels);
+    }
+
+    const choseLevel = (level) => {
+
+        setSubjects(level.subjects)
+        setShowOver(false)
+        console.log('subjects : ', subjects);
+    }
+
+    console.log('selectCourse : ', selectCourse.levels);
     useEffect(() => {
-        if (!props.reducer.renderd) { props.getData()}
+        if (!props.reducer.renderd) { props.getData() }
     }, [])
 
     return (
         <section className='coursesN'>
-
-            {/* <button onClick={() => !props.reducer.renderd&&props.getData()}>get courses</button> */}
-
+           
             <If condition={props.reducer.courseRendering}>
-                <Then>
                 <Spinner animation="grow" />
                 <Spinner animation="grow" />
                 <Spinner animation="grow" />
 
-                </Then>
             </If>
-
             <ul>
                 {props.reducer.data.map(item => {
                     console.log('item : ', item);
-                    
-                    return (
-                        <li onClick={() => props.choose(item.courseName)} key={item._id}>
-                            {/* {item.courseName} */}
-                            <NavLink to='/course'> {item.courseName}</NavLink>
 
+                    return (
+                        <li onClick={() => chooseCourse(item)} key={item._id}>
+                            {item.courseName}
                         </li>
                     )
-                    
+
                 })}
+
             </ul>
+            <If condition={overview.length > 1}>
+                <section className='overview'>
+                    <h3>overview</h3>
+
+                    <p>
+                        {overview}
+                    </p>
+                </section>
+
+            </If>
+            <If condition={levels.length > 1}>
+                <h3>levels:</h3>
+                <ul>
+                    {levels.map(item => {
+                        return (
+                            <li
+                                onClick={() => choseLevel(item)} key={item._id}>
+                                {item.levelName}
+                            </li>
+                        )
+                    })}
+                </ul>
+            </If>
+
+            <If condition={!showOver && subjects.length > 1}>
+                <h3>subjects</h3>
+                <ul>
+                    {subjects.map(item => {
+                        return (
+                            <li onClick={()=>props.selectSubject(item)}
+                                key={item._id}>
+                                <NavLink to='/subject'>{item.subject}</NavLink>
+                            </li>
+                        )
+                    })}
+                </ul>
+            </If>
 
 
-            {/* <If condition={props.reducer.chosen&&!props.reducer.levelsRendered}>
-                <Then>
-                   
-                    <NavLink to='/course'> Show</NavLink>
-                
 
-                </Then>
-            </If> */}
 
 
         </section>
@@ -66,7 +117,7 @@ const mapStateToProps = state => ({
 });
 
 
-const mapDispatchToProps = { getData, choose, levelsRendered };
+const mapDispatchToProps = { getData, choose, levelsRendered,selectSubject };
 
 export default connect(
     mapStateToProps,

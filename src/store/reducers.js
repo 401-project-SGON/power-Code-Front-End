@@ -12,7 +12,8 @@ let initialState = {
     levelsRendered:false,
     users:[],
     imageUploading:false,
-    courseRendering:false
+    courseRendering:false,
+    selectedSubject:{}
 }
 
 
@@ -112,8 +113,8 @@ export default (state = initialState, action) => {
             return state
 
         case 'CHOSECOURSE':
-
-            state={...state,chosen:payload}
+            let arr3 = state.data.filter(item=>item.courseName==payload)
+            state={...state,chosen:arr3}
             console.log('state.chosen : ', state.chosen);
             return state
 
@@ -152,6 +153,12 @@ export default (state = initialState, action) => {
             })
             // console.log('state. : ', state.);
             return state;
+
+        case 'SELECTSUBJECT':
+
+            state={...state,selectedSubject:payload}
+            console.log('state.selectedSubject : ', state.selectedSubject);
+            return state
        
         default:
             return state;

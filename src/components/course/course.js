@@ -1,92 +1,25 @@
 import React, { useEffect, useState } from 'react'
 import { connect } from 'react-redux'
 import { If, Then } from '../if'
-import {NavLink} from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
+import Code from './../codeEditor/codeEditor.js'
 import './index.css'
 
 
+const Subject = (props) => {
 
-
-
-const Course = (props) => {
-
-    let [questions, setQuestions] = useState([])
-    let [score, setScore] = useState(0)
-    let [answered, setAnswered] = useState([])
-    let [showScore, setShowScore] = useState(false)
-
-
-    let loc
-    if (props.reducer.chosen == 'javaScript') { loc = 0 }
-    if (props.reducer.chosen == 'HTML') { loc = 1 }
-    if (props.reducer.chosen == 'CSS') { loc = 2 }
-
-    const renderQuestion = (level) => {
-
-        setQuestions(level)
-        console.log('questions : ', questions);
-    }
-
-    const check = (answer, trueOrNot, id) => {
-        if (trueOrNot == answer) { setScore(score + 1) }
-        setAnswered([...answered, id])
-        console.log('answered : ', answered);
-    }
 
     return (
 
-        <section className='course'>
+        <section className='subject'>
+            <h3>{props.reducer.selectedSubject.subject}</h3>
 
-            <section className='courses'>
-                <h1>Courses:</h1>
-                <h3>{props.reducer.chosen}</h3>
+            <p>{props.reducer.selectedSubject.explain}</p>
 
-                <ul>
-                    {props.reducer.data[loc] && props.reducer.data[loc].levels.map(item => {
-                        return (
-                            <li onClick={() => { renderQuestion(item.questions) }} key={item.id}>
-                                {item.levelName}
-                            </li>
-                        )
-                    })}
-                </ul>
-            </section>
+            <p>example:<br /> {props.reducer.selectedSubject.example}</p>
 
-            <section className='questions'>
+            <Code />
 
-                <ul>
-                    {questions && questions.map(item => {
-                        return (
-                            <If condition={!answered.includes(item._id)}>
-                                <Then>
-                                    <li key={item}>
-                                        {item.question}  -- answer: {item.answer}
-                                        <button onClick={() => check(item.answer, 'true', item._id)}>true</button>
-                                        <button onClick={() => check(item.answer, 'false', item._id)}>false</button>
-
-                                    </li>
-                                </Then></If>
-                        )
-                    })}
-                </ul>
-                <If condition={questions.length > 0}>
-                    <Then>
-                        <ul>
-                            <li>
-                                <NavLink to='/code'>Try On Code Editor</NavLink>
-
-                            </li>
-                        </ul>
-                        <h3>Your Answered :"{answered.length}- question</h3>
-                        <button onClick={() => { setShowScore(true) }}>Show my score</button>
-                        <If condition={showScore}><Then>
-                            <h3>Your Score is:"{score} / out of {answered.length}</h3>
-                        </Then></If>
-                    </Then>
-                </If>
-
-
-            </section>
 
 
 
@@ -102,4 +35,4 @@ const mapStateToProps = state => ({
 
 export default connect(
     mapStateToProps
-)(Course);
+)(Subject);

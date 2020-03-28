@@ -9,29 +9,34 @@ import Code from './components/codeEditor/codeEditor.js'
 import Chat from './components/chat/chat.js'
 import UserInfo from './components/userInfo/userInfo.js'
 import AdminTool from './components/adminTool/adminTool.js'
+import Main from './components/main/main.js'
 
 const User = props => {
   return (
     <Auth capability="read">
 
+
     <Switch>
-      <Route path='/user'>
+    <Route exact path='/'>
+        <Main/>
+      </Route>
+      <Route exact path='/user'>
         <UserInfo />
       </Route>
 
-      <Route path='/chat'>
+      <Route exact path='/chat'>
         <Chat />
       </Route>
 
-      <Route path='/code' >
+      <Route exact path='/code' >
         <Code />
       </Route>
 
-      <Route path='/data'>
+      <Route exact path='/data'>
         <Data />
       </Route>
 
-      <Route path='/course'>
+      <Route exact path='/subject'>
         <Cours />
       </Route>
       </Switch>
@@ -60,16 +65,17 @@ const App = (props) => {
 
   return (
     <>
-      <Route path='/'>
+      
+
         <Header />
 
         <hr />
+       
         <User />
         <Editor />
         <Admin />
         <Footer />
 
-      </Route>
     </>
   );
 
