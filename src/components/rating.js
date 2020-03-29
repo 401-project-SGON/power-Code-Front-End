@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import StarRatingComponent from 'react-star-rating-component';
 
 
-class AppI extends React.Component {
+class Ratings extends React.Component {
   constructor() {
     super();
 
@@ -21,7 +21,7 @@ class AppI extends React.Component {
 
     return (
       <div>
-        <h2>Rating from state: {rating}</h2>
+        <h2>Rating Our App : {rating}</h2>
         <StarRatingComponent
           name="rate1"
           starCount={10}
@@ -32,4 +32,5 @@ class AppI extends React.Component {
     );
   }
 }
+export default Ratings;
 
