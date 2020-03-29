@@ -11,6 +11,7 @@ import UserInfo from './components/userInfo/userInfo.js'
 import AdminTool from './components/adminTool/adminTool.js'
 import Main from './components/main/main.js'
 import Feedback from './components/feedback/feedback.js'
+import Test from './components/test/test.js'
 
 const User = props => {
   return (
@@ -41,6 +42,10 @@ const User = props => {
       </Route>
       <Route exact path='/feedback'>
       <Feedback/>
+      </Route>
+
+      <Route exact path='/test'>
+      <Test/>
       </Route>
 
       </Switch>

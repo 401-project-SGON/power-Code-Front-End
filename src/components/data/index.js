@@ -23,6 +23,7 @@ const Data = (props) => {
 
 
     const chooseCourse = (course) => {
+        props.choose(course)
         setShowOver(true)
         setSelect(course);
         setoverview(course.overview)
@@ -87,7 +88,11 @@ const Data = (props) => {
                     })}
                 </ul>
             </If>
-
+                    <If condition={selectCourse}>
+                        <h3>Test yourself</h3>
+            <NavLink to='/test'>{selectCourse.courseName}</NavLink>
+            </If>
+                
             <If condition={!showOver && subjects.length > 1}>
                 <h3>subjects</h3>
                 <ul>
@@ -103,7 +108,7 @@ const Data = (props) => {
             </If>
 
 
-
+            
 
 
         </section>

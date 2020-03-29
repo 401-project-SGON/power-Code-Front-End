@@ -129,8 +129,7 @@ export default (state = initialState, action) => {
             return state
 
         case 'CHOSECOURSE':
-            let arr3 = state.data.filter(item=>item.courseName==payload)
-            state={...state,chosen:arr3}
+            state={...state,chosen:payload}
             console.log('state.chosen : ', state.chosen);
             return state
 
