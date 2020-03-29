@@ -8,6 +8,7 @@ let initialState = {
   token: '',
   data: [],
   renderd:false,
+  feedbacks:[],
 };
 
 
@@ -96,6 +97,12 @@ export default (state = initialState, action) => {
 
   case 'RENDER':
     return state;
+
+  case 'CREATE_COURSE':
+    state = { ...state, feedbacks:[] };
+    return state;
+
+
   default:
     return state;
   }

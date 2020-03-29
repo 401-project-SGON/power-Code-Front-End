@@ -9,6 +9,7 @@ import Header from './components/common/header.js';
 import NotFound from './components/notFound.js';
 import Footer from './components/common/footer';
 import ContactUs from './components/contactus/contactUs.js';
+import Feedback from './components/feedback/feedback.js';
 
 
 const User = props => {
@@ -42,10 +43,10 @@ const App = (props)=> {
       <Switch>
         <Route exact path="/" component={HomePage}/>
         <Route path="/about" component={AboutPage}/>
+        <Route path="/feedback" component={Feedback}/>
         <Route path="/contactUs" component={ContactUs}/>
         <Route component={NotFound}/>
       </Switch>
-
       <Login />
       <hr />
       <User/>

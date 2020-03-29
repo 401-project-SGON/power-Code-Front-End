@@ -78,3 +78,10 @@ export const render = ()=>{
 
   };
 };
+
+export const createFeedback = (feedback)=>{
+  return{
+    type:'CREATE_COURSE',
+    feedback:feedback,
+  };
+};

@@ -7,9 +7,9 @@ const Header = () =>{
     <nav>
       <NavLink to="/" exact>Home</NavLink>{' | '}
       <NavLink to="/about" exact>About</NavLink>{' | '}
+      <NavLink to="/feedback" exact>Feedback</NavLink>{' | '}
       <NavLink to="/contactUs" >Contact Us</NavLink>
     </nav>
-    
   );
 };
 export default Header;
