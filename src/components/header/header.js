@@ -14,7 +14,7 @@ const Header = (props) => {
         <>
 
 
-            <Navbar bg="dark" variant="dark">
+            <Navbar bg="dark" variant="dark" sticky="top">
                 <Navbar.Brand><NavLink to='/'><img src='https://cdn2.iconfinder.com/data/icons/circular-icons-filled/78/Circular_House-512.png' height='40' width='40' /></NavLink></Navbar.Brand>
                 <Nav className="mr-auto">
                     <Nav.Link ><NavLink to='/data'>Courses</NavLink></Nav.Link>
