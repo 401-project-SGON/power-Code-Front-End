@@ -1,13 +1,14 @@
 
 import React, { useEffect, useState } from 'react';
 import { connect } from 'react-redux'
-import { getUsers } from '../../store/actions.js'
+import { getUsers ,getFeedback} from '../../store/actions.js'
 import { If, Then } from '../if'
 
 const AdminTool  = (props) =>{
 
     useEffect(()=>{
         props.getUsers()
+        props.getFeedback()
         console.log('props.reducer.users : ', props.reducer.users);
 
     },[])
@@ -21,6 +22,20 @@ const AdminTool  = (props) =>{
                 
                 <li key={user._id}>
                     {user.username} -  {user.role} - {user.email} - {user.phone}
+                </li>
+               
+                
+            )
+        })}
+    </ul>
+
+        <h3> feedback from all users</h3>
+    <ul>
+        {props.reducer.feedback.map(item => {
+            return (
+                
+                <li key={item._id}>
+                   feedback: {item.feedback} , suggestion:  {item.suggestions}, user: {item.user} 
                 </li>
                
                 
@@ -44,7 +59,7 @@ const mapStateToProps = state => ({
 });
 
 
-const mapDispatchToProps = { getUsers };
+const mapDispatchToProps = { getUsers,getFeedback };
 
 export default connect(
     mapStateToProps,

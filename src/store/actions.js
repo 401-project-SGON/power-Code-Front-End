@@ -1,6 +1,6 @@
 
-const API = process.env.REACT_APP_API;
-// const API = 'http://localhost:3002'
+// const API = process.env.REACT_APP_API;
+const API = 'http://localhost:3002'
 
 export const login = (user_pass_name) => {
     return{
@@ -130,4 +130,38 @@ export const selectSubject = (payload)=>{
         type:'SELECTSUBJECT',
         payload:payload
     }
+}
+
+export const sendFeedback = (payload)=>{
+    return{
+        type:'SENDFEEDBACK',
+        payload:fetch(`${API}/feedback`, {
+            method: 'post',
+            mode: 'cors',
+            cache: 'no-cache',
+            headers: {
+                'Content-Type': 'application/json'
+                // 'Content-Type': 'application/x-www-form-urlencoded',
+              },
+            body:JSON.stringify(payload)
+          })
+            .then(response => response.json())
+            .then((response)=>console.log('response:  ', response))
+            .catch(console.error)
+        }  
+    }
+
+
+export const getFeedback = () =>{
+    return{
+        type:'GETFEEDBACK',
+        payload:fetch(`${API}/feedback`)
+        .then(response => {
+           return response.json()
+        })
+        .catch(console.error)
+        
+    }  
+
+    
 }

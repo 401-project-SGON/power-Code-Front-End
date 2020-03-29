@@ -21,6 +21,7 @@ const Header = (props) => {
                     <Nav.Link ><NavLink to='/code'>Code Editor</NavLink></Nav.Link>
                     <Nav.Link ><NavLink to='/chat'><img src='https://cdn2.iconfinder.com/data/icons/communication-vol-1-4/16/chat-bubble-message-speech.6-512.png' height='30' width='30' /></NavLink></Nav.Link>
                     <Nav.Link ><NavLink to='/user'><img src='https://cdn2.iconfinder.com/data/icons/circular-icons-filled/78/Circular_Person-512.png' height='30' width='30' /></NavLink></Nav.Link>
+                    <Nav.Link ><NavLink to='/feedback'><img src='https://cdn1.iconfinder.com/data/icons/feedback-review/64/x-05-512.png' height='30' width='35' /></NavLink></Nav.Link>
                 </Nav>
                 <Form inline>
                     <FormControl type="text" placeholder="Search" className="mr-sm-2" />

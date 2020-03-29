@@ -1,6 +1,7 @@
 
 import cookie from 'react-cookies';
 import jwt from 'jsonwebtoken';
+import feedback from '../components/feedback/feedback';
 
 let initialState = {
     loggedIn: false,
@@ -15,7 +16,9 @@ let initialState = {
     courseRendering:false,
     selectedSubject:{},
     signing:false,
-    signup:false
+    signup:false,
+    feedbacksent:false,
+    feedback:[]
 }
 
 
@@ -168,7 +171,19 @@ export default (state = initialState, action) => {
             state={...state,selectedSubject:payload}
             console.log('state.selectedSubject : ', state.selectedSubject);
             return state
-       
+
+        case 'SENDFEEDBACK_FULFILLED':
+
+        state={...state,feedbacksent:true}
+
+        case 'GETFEEDBACK_FULFILLED':
+
+            console.log('payload : ', payload);
+            state={...state,feedback:payload}
+
+            console.log('state.feedback : ', state.feedback);
+            return state
+            
         default:
             return state;
     }

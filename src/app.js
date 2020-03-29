@@ -10,11 +10,11 @@ import Chat from './components/chat/chat.js'
 import UserInfo from './components/userInfo/userInfo.js'
 import AdminTool from './components/adminTool/adminTool.js'
 import Main from './components/main/main.js'
+import Feedback from './components/feedback/feedback.js'
 
 const User = props => {
   return (
     <Auth capability="read">
-
 
     <Switch>
     <Route exact path='/'>
@@ -39,6 +39,10 @@ const User = props => {
       <Route exact path='/subject'>
         <Cours />
       </Route>
+      <Route exact path='/feedback'>
+      <Feedback/>
+      </Route>
+
       </Switch>
     </Auth>
   );
@@ -54,7 +58,7 @@ const Editor = props => {
 const Admin = props => {
   return (
     <Auth capability="delete">
-<AdminTool/>
+        <AdminTool/>
 
     </Auth>
   );
@@ -70,7 +74,7 @@ const App = (props) => {
         <Header />
 
         <hr />
-       
+
         <User />
         <Editor />
         <Admin />
