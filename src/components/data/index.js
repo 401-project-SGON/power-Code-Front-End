@@ -3,8 +3,10 @@ import { connect } from 'react-redux'
 import { getData, choose, levelsRendered ,selectSubject} from '../../store/actions.js'
 import { NavLink } from "react-router-dom";
 import { Then } from '../if'
-import { Spinner } from 'react-bootstrap'
+import { Spinner,Button } from 'react-bootstrap'
 import './data.css'
+
+
 
 
 
@@ -57,9 +59,16 @@ const Data = (props) => {
                     console.log('item : ', item);
 
                     return (
-                        <li onClick={() => chooseCourse(item)} key={item._id}>
-                            {item.courseName}
-                        </li>
+                        <section className='courseName'>
+                        <Button type="button" onClick={() => chooseCourse(item)}  key={item._id} class="btn btn-outline-primary"> {item.courseName}</Button>
+
+                        </section>
+                        // <button className='courseName' onClick={() => chooseCourse(item)} key={item._id}>
+                        //     {item.courseName}
+                            
+                        // </button>
+
+                       
                     )
 
                 })}
@@ -70,13 +79,23 @@ const Data = (props) => {
                     <h3>overview</h3>
 
                     <p>
-                        {overview}
+                        {props.reducer.chosen.overview}
                     </p>
+                    <img src='https://www.linkedin.com/media-proxy/ext?w=512&h=288&hash=S4CGRzcLjuBH7S9XSM3p8aoPbhs%3D&ora=1%2CaFBCTXdkRmpGL2lvQUFBPQ%2CxAVta5g-0R6plxVUzgUv5K_PrkC9q0RIUJDPBy-gXCWu-NKfYXDpfcXYZLOkoVsTcC0FmQwxeu-1QTapG43ma90'
+                    />
+
                 </section>
 
             </If>
+            <If condition={selectCourse}>
+                        <h3>Test yourself</h3>
+            <NavLink to='/test'>{selectCourse.courseName}</NavLink>
+            </If>
+
+            <section className='levels'>
+
             <If condition={levels.length > 1}>
-                <h3>levels:</h3>
+                <h3>Levels</h3>
                 <ul>
                     {levels.map(item => {
                         return (
@@ -88,13 +107,11 @@ const Data = (props) => {
                     })}
                 </ul>
             </If>
-                    <If condition={selectCourse}>
-                        <h3>Test yourself</h3>
-            <NavLink to='/test'>{selectCourse.courseName}</NavLink>
-            </If>
-                
+            </section>
+                    
+                <section className='lessons'>
             <If condition={!showOver && subjects.length > 1}>
-                <h3>subjects</h3>
+                <h3>Lessons</h3>
                 <ul>
                     {subjects.map(item => {
                         return (
@@ -106,6 +123,7 @@ const Data = (props) => {
                     })}
                 </ul>
             </If>
+            </section>
 
 
             

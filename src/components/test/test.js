@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { connect } from 'react-redux'
 import {Button} from 'react-bootstrap'
-
+import './test.css'
 const If = props => {
     return props.condition ? props.children : null;
 };
@@ -31,17 +31,19 @@ setAnswered([...answered,answer.question])
         <p>
             answer with true and false
         </p>
-        <ul>
+        <ul className='q'>
             
                     <>
                     <If condition={show}>
                 <li key={data[index].question}> {data[index].question}</li>
-                <Button variant="outline-success" onClick={()=>select(data[index],'true')}>true</Button>
-                <Button variant="outline-warning" onClick={()=>select(data[index],'false')}>false</Button>
+                <section className='b12'>
+                <Button className='b1' variant="outline-success" onClick={()=>select(data[index],'true')}>true</Button>
+                <Button className='b2' variant="outline-warning" onClick={()=>select(data[index],'false')}>false</Button>
+                </section>
                 </If>
 
                 <If condition={finish}>
-    <h3>Congratulations you got '{score}' of {data.length}</h3>
+    <h3 className='con'>Congratulations you got '{score}' of {data.length}</h3>
                 </If>
                 </>
                 

@@ -1,25 +1,36 @@
 import React, { useEffect, useState } from 'react'
 import { connect } from 'react-redux'
-import { If, Then } from '../if'
 import { NavLink } from 'react-router-dom'
 import Code from './../codeEditor/codeEditor.js'
+import {Button} from 'react-bootstrap'
 import './index.css'
 
-
+const If = props => {
+    return props.condition ? props.children : null;
+};
 const Subject = (props) => {
 
+    const [show,setShow] = useState(false)
 
+    const open = ()=>{
+        if(show){setShow(false)}
+        if(!show){setShow(true)}
+        console.log('show : ', show);
+    }
     return (
 
         <section className='subject'>
             <h3>{props.reducer.selectedSubject.subject}</h3>
 
-            <p>{props.reducer.selectedSubject.explain}</p>
+            <p className='example'>{props.reducer.selectedSubject.explain}</p>
+            <Button  variant="outline-primary" onClick={open}> example </Button><br/>
 
-            <code> {props.reducer.selectedSubject.example}</code>
+            <If condition={show}>
 
-            <Code code={props.reducer.selectedSubject.example}/>
+            <section className='code'> <p> {props.reducer.selectedSubject.example}</p></section>
+            <section > <pre><Code code={props.reducer.selectedSubject.example}/></pre></section>
 
+            </If>
 
 
 

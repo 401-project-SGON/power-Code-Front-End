@@ -16,6 +16,8 @@ const Header = (props) => {
 
             <Navbar bg="dark" variant="dark" sticky="top">
                 <Navbar.Brand><NavLink to='/'><img src='https://cdn2.iconfinder.com/data/icons/circular-icons-filled/78/Circular_House-512.png' height='40' width='40' /></NavLink></Navbar.Brand>
+                <If condition={props.reducer.loggedIn}><Then>
+
                 <Nav className="mr-auto">
                     <Nav.Link ><NavLink to='/data'>Courses</NavLink></Nav.Link>
                     <Nav.Link ><NavLink to='/code'>Code Editor</NavLink></Nav.Link>
@@ -23,6 +25,7 @@ const Header = (props) => {
                     <Nav.Link ><NavLink to='/user'><img src='https://cdn2.iconfinder.com/data/icons/circular-icons-filled/78/Circular_Person-512.png' height='30' width='30' /></NavLink></Nav.Link>
                     <Nav.Link ><NavLink to='/feedback'><img src='https://cdn1.iconfinder.com/data/icons/feedback-review/64/x-05-512.png' height='30' width='35' /></NavLink></Nav.Link>
                 </Nav>
+                </Then></If>
                 <Form inline>
                     <FormControl type="text" placeholder="Search" className="mr-sm-2" />
                     <Button variant="primary">Search</Button>{' _ '}
@@ -37,6 +40,7 @@ const Header = (props) => {
                                 <NavDropdown.Divider />
                                 <NavDropdown.Item ><img src={props.reducer.user.url} height='50' width='50' /></NavDropdown.Item>
                                 
+                                <Login />
 
                             </NavDropdown>
                             <img src={props.reducer.user.url} height='45' width='45' />

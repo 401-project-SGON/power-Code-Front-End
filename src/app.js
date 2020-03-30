@@ -1,4 +1,5 @@
 import React from 'react';
+import './index.css'
 import Auth from './components/auth/auth.js';
 import Data from './components/data/index.js'
 import Header from './components/header/header.js'
@@ -12,11 +13,25 @@ import AdminTool from './components/adminTool/adminTool.js'
 import Main from './components/main/main.js'
 import Feedback from './components/feedback/feedback.js'
 import Test from './components/test/test.js'
+import {DropdownButton,Dropdown} from 'react-bootstrap'
+// import Chat from './components/chat/chat.js'
+
+const ChatBox= ()=>{
+  return(
+<section className='c'>
+<DropdownButton id="dropdown-button-drop-up" drop='up' title="Chat messege">
+  <Dropdown.Item as="button"><Chat/></Dropdown.Item>
+
+</DropdownButton>
+</section>
+  )
+}
+
 
 const User = props => {
   return (
     <Auth capability="read">
-
+      <ChatBox/>
     <Switch>
     <Route exact path='/'>
         <Main/>
@@ -73,8 +88,7 @@ const App = (props) => {
 
 
   return (
-    <>
-      
+      <section className='main'>
 
         <Header />
 
@@ -84,8 +98,7 @@ const App = (props) => {
         <Editor />
         <Admin />
         <Footer />
-
-    </>
+        </section>
   );
 
 }
