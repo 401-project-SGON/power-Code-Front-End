@@ -25,7 +25,7 @@ function Example(props) {
   
         <Modal show={show} onHide={handleClose2}>
           <Modal.Header closeButton>
-            <Modal.Title>Modal heading</Modal.Title>
+            <Modal.Title>{props.header}</Modal.Title>
           </Modal.Header>
           <Modal.Body>
           {props.children}

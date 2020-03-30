@@ -1,8 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux'
 import cookie from 'react-cookies';
-import { login, validateToken, signup,saveImage } from '../../store/actions.js'
-import { Form, Button ,Spinner} from 'react-bootstrap'
+import { login, validateToken, signup, saveImage } from '../../store/actions.js'
+import { Form, Button, Spinner } from 'react-bootstrap'
 import './login.css'
 import Example from './../modal/modal.js'
 import { Then } from '../if/index.js';
@@ -17,24 +17,24 @@ class Signup extends React.Component {
 
   constructor(props) {
     super(props);
-    this.state = { username: '', password: '' ,email:'',phone:'',url:''};
+    this.state = { username: '', password: '', email: '', phone: '', url: '' };
   }
 
- handleImage =(e)=>{
-    
-    
+  handleImage = (e) => {
+
+
     const files = Array.from(e.target.files)
     const formData = new FormData()
     files.forEach((file, i) => {
       formData.append(i, file)
     })
-   
-    this.props.dispatch(saveImage(formData))
-    .then((data)=>{
-        this.setState({ url:data.value[0].url })
-    })
 
-}
+    this.props.dispatch(saveImage(formData))
+      .then((data) => {
+        this.setState({ url: data.value[0].url })
+      })
+
+  }
 
 
   componentDidMount() {
@@ -49,85 +49,88 @@ class Signup extends React.Component {
   };
 
   handleSubmit = e => {
-      if(e) e.preventDefault();
+    if (e) e.preventDefault();
     this.props.dispatch(login({ 'username': this.state.username, 'password': this.state.password }))
   };
   handleSubmit_signup = e => {
-    if(e) e.preventDefault();
+    if (e) e.preventDefault();
 
     this.props.dispatch(signup(
-      { 'username': this.state.username, 
-      'password': this.state.password ,
-      'email': this.state.email,
-      'phone': this.state.phone,
-      'url':this.state.url
+      {
+        'username': this.state.username,
+        'password': this.state.password,
+        'email': this.state.email,
+        'phone': this.state.phone,
+        'url': this.state.url
 
-    }))
+      }))
   };
 
 
   render() {
     return (
-        <If condition={!this.props.reducer.loggedIn}>
-        <Example buttonHandle={this.handleSubmit_signup} button={'signup'} name='SignUp' closehand={this.props.reducer.signing}>
+      <If condition={!this.props.reducer.loggedIn}>
+        <Example buttonHandle={this.handleSubmit_signup} button={'signup'} name='SignUp' closehand={this.props.reducer.signing} header='Sign up'>
 
-      <section className='form'>
-       
+          <section className='form'>
 
-          <Form onSubmit={this.handleSubmit_signup}>
-            <input
-              placeholder="UserName"
-              name="username"
-              onChange={this.handleChange}
-            />
-            <input
-              placeholder="email"
-              name="email"
-              onChange={this.handleChange}
-            />
-            <input
-              placeholder="phone number"
-              name="phone"
-              onChange={this.handleChange}
-            />
-            <input
-              type='file'
-              name="url"
-              onChange={this.handleImage}
-            />
-            <If condition={this.props.reducer.imageUploading}>
-             
-              <Spinner animation="border" />
-             
-            </If>
-            <input
-              placeholder="password"
-              name="password"
-              onChange={this.handleChange}
-            />
-            
 
-            
-            <If condition={this.props.reducer.signing}>
-             
-             <Spinner animation="border" />
-            
-           </If>
-           <If condition={this.props.reducer.signup}>
-             
-             <h4>greate! register success</h4>
-            
-           </If>
+            <Form onSubmit={this.handleSubmit_signup}>
+              <Form.Group controlId="formBasicEmail">
+                <Form.Label>Username</Form.Label>
+                <Form.Control size="sm" name='username' onChange={this.handleChange} placeholder="Enter username" />
+              </Form.Group>
 
-           
+              <Form.Group controlId="formBasicEmail">
+                <Form.Label>Email</Form.Label>
+                <Form.Control size="sm" name='email' onChange={this.handleChange} placeholder="Enter email" />
+              </Form.Group>
 
-          </Form>
+              <Form.Group controlId="formBasicEmail">
+                <Form.Label>Phone number</Form.Label>
+                <Form.Control size="sm" name='phone' onChange={this.handleChange} placeholder="Enter phone number" />
+              </Form.Group>
+              <Form.File
+                id="custom-file"
+                label="Upload your picture"
+                name='url'
+                onChange={this.handleImage}
+                custom
+              />
 
-       
-       
-        </section>
+              <If condition={this.props.reducer.imageUploading}>
+
+                <Spinner animation="border" size="sm" />
+
+              </If>
+              <Form.Group controlId="formBasicEmail">
+                <Form.Label>Password</Form.Label>
+                <Form.Control size="sm" name='password' onChange={this.handleChange} placeholder="Enter password" />
+              </Form.Group>
+
+
+
+
+              <If condition={this.props.reducer.signing}>
+
+                <Spinner animation="border" />
+
+              </If>
+              <If condition={this.props.reducer.signup}>
+
+                <h4>greate! register success</h4>
+
+              </If>
+
+
+
+            </Form>
+
+
+
+          </section>
         </Example>
-        </If>
+      </If>
     );
   }
 }

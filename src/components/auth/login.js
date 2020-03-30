@@ -43,7 +43,7 @@ class Login extends React.Component {
     return (
       <>
       <If condition={!this.props.reducer.loggedIn}>
-      <Example buttonHandle={this.handleSubmit} button={'SignIn'} name='SignIn' closehand={this.props.reducer.signing}>
+      <Example buttonHandle={this.handleSubmit} button={'SignIn'} name='SignIn' closehand={this.props.reducer.signing} header='Sign in'>
 
      
         <section className='form'>
