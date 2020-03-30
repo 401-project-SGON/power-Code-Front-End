@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { connect } from 'react-redux'
-import { getData, choose, levelsRendered ,selectSubject} from '../../store/actions.js'
+import { getData, choose, levelsRendered, selectSubject } from '../../store/actions.js'
 import { NavLink } from "react-router-dom";
 import { Then } from '../if'
 import { Spinner } from 'react-bootstrap'
@@ -45,13 +45,78 @@ const Data = (props) => {
 
     return (
         <section className='coursesN'>
-           
+
             <If condition={props.reducer.courseRendering}>
                 <Spinner animation="grow" />
                 <Spinner animation="grow" />
-                <Spinner animation="grow" />
+                {/* <Spinner animation="grow" /> */}
 
             </If>
+
+
+            {/* //////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */}
+
+            {/* 
+<input type="radio" name="nav" id="one" checked="checked"/>
+<label for="one">HTML</label>
+
+
+
+<input type="radio" name="nav" id="two"/>
+<label for="two">CSS</label>
+
+
+
+<input type="radio" name="nav" id="three"/>
+<label for="three">HTML</label>
+
+
+
+
+<article class="content one">
+
+    overview
+    test
+    level
+
+    <h3>html</h3>
+    <p> </p>
+
+
+</article>
+
+<article class="content two">
+
+        overview
+    test
+    level
+
+
+    <h3></h3>
+    <p> </p>
+</article>
+
+<article class="content three">
+
+        overview
+    test
+    level
+
+    <h3></h3>
+    <p></p>
+
+
+</article>
+ */}
+
+
+
+
+
+
+            {/* ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */}
+
+
             <ul>
                 {props.reducer.data.map(item => {
                     console.log('item : ', item);
@@ -65,6 +130,15 @@ const Data = (props) => {
                 })}
 
             </ul>
+
+
+
+
+
+
+
+
+
             <If condition={overview.length > 1}>
                 <section className='overview'>
                     <h3>overview</h3>
@@ -75,6 +149,20 @@ const Data = (props) => {
                 </section>
 
             </If>
+
+            <If condition={selectCourse}>
+                <h3>Test yourself</h3>
+                <NavLink to='/test'>{selectCourse.courseName}</NavLink>
+            </If>
+
+
+
+
+
+
+
+
+
             <If condition={levels.length > 1}>
                 <h3>levels:</h3>
                 <ul>
@@ -88,17 +176,19 @@ const Data = (props) => {
                     })}
                 </ul>
             </If>
-                    <If condition={selectCourse}>
-                        <h3>Test yourself</h3>
-            <NavLink to='/test'>{selectCourse.courseName}</NavLink>
-            </If>
-                
+
+
+
+
+
+
+
             <If condition={!showOver && subjects.length > 1}>
                 <h3>subjects</h3>
                 <ul>
                     {subjects.map(item => {
                         return (
-                            <li onClick={()=>props.selectSubject(item)}
+                            <li onClick={() => props.selectSubject(item)}
                                 key={item._id}>
                                 <NavLink to='/subject'>{item.subject}</NavLink>
                             </li>
@@ -108,7 +198,7 @@ const Data = (props) => {
             </If>
 
 
-            
+
 
 
         </section>
@@ -122,7 +212,7 @@ const mapStateToProps = state => ({
 });
 
 
-const mapDispatchToProps = { getData, choose, levelsRendered,selectSubject };
+const mapDispatchToProps = { getData, choose, levelsRendered, selectSubject };
 
 export default connect(
     mapStateToProps,

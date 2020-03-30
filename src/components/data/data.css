@@ -1,0 +1,33 @@
+input, .content {
+    display: none;
+    background: #ba2020;
+    line-height: 25px;
+    padding: 5px 25px;
+    color: #fff;
+    font: normal 1em/150% Sans-Serif;
+    min-width: 200px;
+}
+
+#one:checked ~ .one,
+#two:checked ~ .two,
+#three:checked ~ .three {display: block;}
+
+label {
+    cursor: pointer;
+    background: #999;
+    height: 25px;
+    padding: 5px 10px;
+    display: inline-block;
+    text-align: center;
+    color: #fff;
+    font: normal 1em/150% Sans-Serif;
+    margin-right: -3px;
+    transition: background .25s linear;  
+}
+
+label:hover, input:checked + label {background: #ba2020;}
+
+h3, p {
+    text-indent: 25px;
+    text-align: justify;
+}
