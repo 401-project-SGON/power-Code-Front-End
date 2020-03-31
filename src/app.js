@@ -15,11 +15,14 @@ import Feedback from './components/feedback/feedback.js'
 import Test from './components/test/test.js'
 import {DropdownButton,Dropdown} from 'react-bootstrap'
 // import Chat from './components/chat/chat.js'
+import ContactUs from './components/contact/contactUs.js'
+
+
 
 const ChatBox= ()=>{
   return(
 <section className='c'>
-<DropdownButton id="dropdown-button-drop-up" drop='up' title="Chat messege">
+<DropdownButton id="dropdown-button-drop-up" drop='up' title="let's chat">
   <Dropdown.Item as="button"><Chat/></Dropdown.Item>
 
 </DropdownButton>
@@ -33,6 +36,9 @@ const User = props => {
     <Auth capability="read">
       <ChatBox/>
     <Switch>
+      <Route exact path='contactUs'>
+      <ContactUs/>
+      </Route>
     <Route exact path='/'>
         <Main/>
       </Route>

@@ -1,7 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import './part1.css'
-
+import  './000.jpeg'
 
 
 
@@ -20,7 +20,7 @@ const Part1 = (props) => {
                             </div>
                         </div>
                         <div class="image">
-                            <img src='https://www.nar.realtor/sites/default/files/styles/main_stage_image/public/laptop-with-web-code-1300w-867h.jpg?itok=QZ4IosYc' />
+                            <img src='https://miro.medium.com/max/10116/1*VBAaUoOm0WRmAgxXVUwHIA.jpeg' />
 
                         </div>
                     </div>
@@ -33,7 +33,7 @@ const Part1 = (props) => {
                             </div>
                         </div>
                         <div class="image">
-                            <img src='https://images.unsplash.com/photo-1515879218367-8466d910aaa4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80' />
+                            <img src='https://blog.zoom.us/wordpress/wp-content/uploads/2020/03/zoom-for-education.jpg' />
 
                         </div>
                     </div>
@@ -46,7 +46,7 @@ const Part1 = (props) => {
                             </div>
                         </div>
                         <div class="image">
-                            <img src='https://images.ctfassets.net/cnu0m8re1exe/8mNFyn7Fn15xx8g3lygAp/99f4534bd491f7259fea75f36c67700b/shutterstock_618062045.jpg?w=650&h=433&fit=fill' />
+                            <img src='https://blog.avast.com/hubfs/officedevicesGettyImages984117566.jpeg' />
 
                         </div>
                     </div>
@@ -54,7 +54,7 @@ const Part1 = (props) => {
                         <div class="legend"></div>
                         <div class="content">
                             <div class="content-txt">
-                                <h1>Lorem ipsum dolor</h1>
+                                <h1>Coding Is life</h1>
                                 <h2> JAVA SCRIPT  CSS  HTML</h2>
                             </div>
                         </div>

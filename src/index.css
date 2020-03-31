@@ -15,13 +15,13 @@ code {
 
 
 .main{
-  /* position: relative; */
+  position: relative;
   min-height: 100%;
   
   }
   .c{
   /* position: absolute; */
-  position: fixed;
+      position: fixed;
       bottom: 0;
       right: 0;
   }

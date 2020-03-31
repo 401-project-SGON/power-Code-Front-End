@@ -1,0 +1,36 @@
+.feedback_form{
+     /* border: solid 4px #20485a; */
+     display: flex;
+     flex-direction: column;
+     /* justify-content: space-between; */
+     margin-left: 310px;
+     width: 614px;
+     border-radius: 16px;
+     background-color: #20485a1f;
+     /* border-left: solid; */
+     /* border-right: solid; */
+     border-top: solid;
+     border-bottom: solid;
+     margin-bottom: 100px;
+
+
+}
+
+.texta{
+    display: flex;
+    width: 581px;
+    margin-top: 10px;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+}
+
+
+.dv-star-rating-star  i{
+    font-size: 15px;
+}
+.submitbtn{
+    float: right;
+}
+.feedbackform{
+    margin: 18px;
+}

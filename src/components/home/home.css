@@ -488,7 +488,7 @@ section h3.section-subheading {
     border-radius: 100%;
     text-align: center;
     color: #fff;
-    background-color: #1ee2e7;
+    background-color: #20485a;
 }
 
 .timeline>li .timeline-image h4 {
@@ -672,7 +672,7 @@ section#contact .form-group textarea.form-control {
 }
 
 section#contact .form-control:focus {
-    border-color: #1ee2e7;
+    border-color: #20485a;
     box-shadow: none;
 }
 

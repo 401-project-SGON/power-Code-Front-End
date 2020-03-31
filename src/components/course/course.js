@@ -10,7 +10,7 @@ const If = props => {
 };
 const Subject = (props) => {
 
-    const [show,setShow] = useState(false)
+    const [show,setShow] = useState(true)
 
     const open = ()=>{
         if(show){setShow(false)}
@@ -20,14 +20,14 @@ const Subject = (props) => {
     return (
 
         <section className='subject'>
-            <h3>{props.reducer.selectedSubject.subject}</h3>
+            <h3 className='title5'>{props.reducer.selectedSubject.subject}</h3>
 
             <p className='example'>{props.reducer.selectedSubject.explain}</p>
-            <Button  variant="outline-primary" onClick={open}> example </Button><br/>
+            <Button className='btnc' variant="outline-primary" onClick={open}> example </Button><br/>
 
             <If condition={show}>
 
-            <section className='code'> <p> {props.reducer.selectedSubject.example}</p></section>
+            <section className='code'> <p className='code1'> {props.reducer.selectedSubject.example}</p></section>
             <section > <pre><Code code={props.reducer.selectedSubject.example}/></pre></section>
 
             </If>

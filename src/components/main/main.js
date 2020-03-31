@@ -9,6 +9,7 @@ import AboutPower from '../aboutPower/about.js'
 import Team from '../team/team.js'
 // import Pic from '../pic/pic.js'
 import Home from '../home/home.js'
+import Feedback from '../feedback/feedback.js'
 
 const Main = () => {
 
@@ -20,7 +21,8 @@ const Main = () => {
       <Home />
       {/* <AboutPower /> */}
       <HomeCourse />
-      <Team />
+      <Feedback/>
+      {/* <Team /> */}
 
 
 
