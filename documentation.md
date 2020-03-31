@@ -39,7 +39,7 @@ Traditional education is coupled with teaching methods that exist within schools
 * `components/adminTool.js`.
 * `components/auth.js`:this is the file that conatins the ACL.
 * `components/chat.js`:this is the file that conatins the chat room .
-* `components/main.js`:this is the file that conatins the 
+* `components/main.js`:this is the file that conatins the ???????????
 * `components/header.js`:this is the file that conatins link to some features.
 * `components/footer.js`:this is the file that conatins the link  to communicate us.
 * `components/feedback.js`:this is the file that conatins form to add feedback, susuggestion and star rating.
@@ -47,9 +47,9 @@ Traditional education is coupled with teaching methods that exist within schools
 * `components/course.js`:this is the file that conatins  list of course that you read it.
 * `components/data.index.js`:this is the file use to show the data.
 * `components/codeEditor.js`:this is the file that conatins the code of code editor.
-* `store/actions.js` :this is the file that conatins the list of actions that are used throughout the application
-* `store/index.js` :this is the file that renders in the reducer to store information
-* `store/reducers.js` :this is the file that holds the functionaity for all of the social media and personal information you select as default and then updates state when new information is rendered 
+* `store/actions.js` :this is the file that conatins the list of actions that are used throughout the application.
+* `store/index.js` :this is the file that renders in the reducer to store information.
+* `store/reducers.js` :this is the file that holds the functionaity for all of the social media and personal information you select as default and then updates state when new information is rendered .
 ***
 ### Tech / Framework Used
 
@@ -73,6 +73,21 @@ Traditional education is coupled with teaching methods that exist within schools
 ***
 ### App flow
 - Initial landing page that allows the user to login by their email, or by using their Google account.
+- Home page displays upon successful log in.
+- in header there is several features like:
+   - Code Editor you can you is to run any code.
+   - Chat room that allow the users to connect to each other.
+   -  User information that show the personal information and give the user ability to change it.
+   - Form allow the users to send feedback, suggestion and rating for our app
+- Displays a list of courses.
+- Each course content:
+   - Overview.
+   - Test yourself:content some of questions and give you grade at the end.
+    - levels content lessons each lesson content :
+        - Explan .
+        - Examples.
+        - Code you can test it by code editor to understand the subject.
+
 
 ***
 ### Way to contribute
