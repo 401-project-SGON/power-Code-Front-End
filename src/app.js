@@ -92,8 +92,6 @@ const App = (props) => {
 
         <Header />
 
-        <hr />
-
         <User />
         <Editor />
         <Admin />

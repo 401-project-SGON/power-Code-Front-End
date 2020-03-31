@@ -61,24 +61,24 @@ console.log('user_pass_name : ', user_pass_name);
     
 }
 
-export const signByGoogle=()=>{
-    return{
-        type:'SIGNUPGOOGLE',
-        payload: fetch(API2)
-        .then(response => {
-            console.log('response : ',response );
-            console.log('response.json() : ',response.json() );
-            // console.log('response.text() : ',response.text() );
+// export const signByGoogle=()=>{
+//     return{
+//         type:'SIGNUPGOOGLE',
+//         payload: fetch(API2)
+//         .then(response => {
+//             console.log('response : ',response );
+//             console.log('response.json() : ',response.json() );
+//             // console.log('response.text() : ',response.text() );
 
-            response.json().then((data)=>{console.log('data : ', data);;return data})
-        //    return response.json()
-        })
-        .catch(console.error)
+//             response.json().then((data)=>{console.log('data : ', data);;return data})
+//         //    return response.json()
+//         })
+//         .catch(console.error)
         
-    }  
+//     }  
     
     
-}
+// }
 
 export const getData = ()=>{
         return{
