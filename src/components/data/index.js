@@ -61,7 +61,6 @@ const Data = (props) => {
                     return (
                         <section className='courseName'>
                         <Button type="button" onClick={() => chooseCourse(item)}  key={item._id} class="btn btn-outline-primary"> {item.courseName}</Button>
-
                         </section>
                         // <button className='courseName' onClick={() => chooseCourse(item)} key={item._id}>
                         //     {item.courseName}
@@ -81,8 +80,7 @@ const Data = (props) => {
                     <p>
                         {props.reducer.chosen.overview}
                     </p>
-                    <img src='https://www.linkedin.com/media-proxy/ext?w=512&h=288&hash=S4CGRzcLjuBH7S9XSM3p8aoPbhs%3D&ora=1%2CaFBCTXdkRmpGL2lvQUFBPQ%2CxAVta5g-0R6plxVUzgUv5K_PrkC9q0RIUJDPBy-gXCWu-NKfYXDpfcXYZLOkoVsTcC0FmQwxeu-1QTapG43ma90'
-                    />
+                    <img src='https://www.linkedin.com/media-proxy/ext?w=512&h=288&hash=S4CGRzcLjuBH7S9XSM3p8aoPbhs%3D&ora=1%2CaFBCTXdkRmpGL2lvQUFBPQ%2CxAVta5g-0R6plxVUzgUv5K_PrkC9q0RIUJDPBy-gXCWu-NKfYXDpfcXYZLOkoVsTcC0FmQwxeu-1QTapG43ma90'/>
 
                 </section>
 

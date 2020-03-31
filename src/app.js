@@ -13,17 +13,16 @@ import AdminTool from './components/adminTool/adminTool.js'
 import Main from './components/main/main.js'
 import Feedback from './components/feedback/feedback.js'
 import Test from './components/test/test.js'
-import {DropdownButton,Dropdown} from 'react-bootstrap'
-// import Chat from './components/chat/chat.js'
+import { DropdownButton, Dropdown } from 'react-bootstrap'
 
-const ChatBox= ()=>{
-  return(
-<section className='c'>
-<DropdownButton id="dropdown-button-drop-up" drop='up' title="Chat messege">
-  <Dropdown.Item as="button"><Chat/></Dropdown.Item>
+const ChatBox = () => {
+  return (
+    <section className='c'>
+      <DropdownButton id="dropdown-button-drop-up" drop='up' title="Chat messege">
+        <Dropdown.Item as="button"><Chat /></Dropdown.Item>
 
-</DropdownButton>
-</section>
+      </DropdownButton>
+    </section>
   )
 }
 
@@ -31,37 +30,37 @@ const ChatBox= ()=>{
 const User = props => {
   return (
     <Auth capability="read">
-      <ChatBox/>
-    <Switch>
-    <Route exact path='/'>
-        <Main/>
-      </Route>
-      <Route exact path='/user'>
-        <UserInfo />
-      </Route>
+      <ChatBox />
+      <Switch>
+        <Route exact path='/'>
+          <Main />
+        </Route>
+        <Route exact path='/user'>
+          <UserInfo />
+        </Route>
 
-      <Route exact path='/chat'>
-        <Chat />
-      </Route>
+        <Route exact path='/chat'>
+          <Chat />
+        </Route>
 
-      <Route exact path='/code' >
-        <Code />
-      </Route>
+        <Route exact path='/code' >
+          <Code />
+        </Route>
 
-      <Route exact path='/data'>
-        <Data />
-      </Route>
+        <Route exact path='/data'>
+          <Data />
+        </Route>
 
-      <Route exact path='/subject'>
-        <Cours />
-      </Route>
-      <Route exact path='/feedback'>
-      <Feedback/>
-      </Route>
+        <Route exact path='/subject'>
+          <Cours />
+        </Route>
+        <Route exact path='/feedback'>
+          <Feedback />
+        </Route>
 
-      <Route exact path='/test'>
-      <Test/>
-      </Route>
+        <Route exact path='/test'>
+          <Test />
+        </Route>
 
       </Switch>
     </Auth>
@@ -78,7 +77,7 @@ const Editor = props => {
 const Admin = props => {
   return (
     <Auth capability="delete">
-        <AdminTool/>
+      <AdminTool />
 
     </Auth>
   );
@@ -88,17 +87,17 @@ const App = (props) => {
 
 
   return (
-      <section className='main'>
+    <section className='main'>
 
-        <Header />
+      <Header />
 
-        <hr />
 
-        <User />
-        <Editor />
-        <Admin />
-        <Footer />
-        </section>
+      <hr />
+      <User />
+      <Editor />
+      <Admin />
+      <Footer />
+    </section>
   );
 
 }

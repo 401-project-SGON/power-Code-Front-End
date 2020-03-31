@@ -1,0 +1,257 @@
+@import url('https://fonts.googleapis.com/css?family=ABeeZee|Bellota+Text|Righteous|Trade+Winds&display=swap');
+@media (min-width: 768px){
+    .open{
+        position: absolute;
+        top: 7px;
+        left: 50px;
+    }
+
+
+    .page-footer{
+        grid-template-columns: 26% 35% 33%;
+        grid-template-rows: 3fr;
+        border: 20px;
+    }
+
+
+
+    .simple-bio{
+        
+        grid-column: 1 ;
+        grid-row: 1;
+    }
+    .links-div{
+        grid-column: 2;
+        grid-row: 1;
+    }
+    .contact-div{
+        grid-column: 3;
+        grid-row: 1;
+    }
+    .social-icon{
+        grid-column: 1/ span 3;
+        grid-row: 2;
+    }
+    .footer-copyright{
+        padding: 2%;
+        grid-row: 3;
+        grid-column: 1/ span 3;
+    }
+
+
+
+
+
+
+    
+    .footer-copyright:hover , .contact-div:hover , .links-div:hover ,.simple-bio:hover {
+        transform: scale(1.005);
+        transition:850ms;
+        
+      }
+      .contact-p:hover{
+        margin-left: 3%;
+        transition: 870ms;
+      }
+
+
+
+      .contact-div{
+        opacity: 65%;
+        text-align: left;
+        margin-left: 20%;
+      }
+
+}
+@media (max-width: 768px){
+  
+    .page-footer{
+        margin-top: 1%;
+        padding: .5%;
+        grid-template-columns: 1fr;
+        grid-template-rows: 5fr;
+        border: 50px;
+        border-top-style: inset;
+
+    }
+    .simple-bio{
+        margin-top: 1%;
+        padding: 1%;
+        grid-row: 1;
+        border: 50px;
+
+    }
+    .links-div{
+        margin-top: 1%;
+        border-top-style: inset;
+        padding: 1%;
+        grid-row: 2;
+    }
+    .contact-div{
+        margin-top: 1%;
+        border-top-style: inset;
+        padding: 1%;
+        grid-row: 3;
+    }
+    .social-icon{
+        margin-top: 1%;
+        padding: 1%;
+        grid-row: 4;
+    }
+
+    
+    .footer-copyright{
+        margin-top: 1%;
+        padding: 1%;
+        grid-row: 5;
+    }
+    .contact-div{
+        margin-top: 1%;
+        opacity: 65%;
+        text-align: left;
+        margin-left: 2%;
+      }
+    .form-button-{
+        padding: 2%;
+         width: 84%;
+        height: 50px;
+        display: block;
+        line-height: 20%;
+        font-size: 20px;
+        margin: auto;
+        color: white;
+        border-radius: 20px;
+        border: rgba(255, 255, 255, 0.623) solid 1px;
+        box-shadow: 3px 3px 3px rgba(45, 148, 105, 0.308);
+    }
+    .donation-href-div{
+        width: 70%;
+        height: 113px;
+        margin: auto;
+        display: grid;
+        padding: 1%;
+        grid-template-columns: 100% ;
+    }
+}
+.page-footer{
+    clear: both;
+    font-family: 'ABeeZee', sans-serif;
+    width: 99%;
+    padding: 4% 0 .5% 4%;
+    margin-top: 9pc;
+    display: grid;
+    color: white;
+    letter-spacing: 1px;
+    box-shadow: 3px 3px 30px rgba(45, 148, 105, 0.308);
+  
+}
+
+.simple-bio{
+    opacity: 70%;
+    font-size: 13px;
+    text-align: left;
+    line-height: 27px;
+    .footer-header{
+        text-align: center;
+        font-size: 21px;
+        margin: .5%;
+    }
+}
+.links-div{
+    opacity: 65%;
+    .linkes-header{
+        text-align: center;
+        font-size: 21px;
+        margin: 0;
+        padding: 0;
+    }
+    ul {
+        margin-left: 27%;
+        font-size: 16px;
+        line-height: 29px;
+        text-align: left;
+        list-style: none;
+        li a{
+            cursor: pointer;
+            color: rgb(144, 148, 148);
+            font-family: 'ABeeZee', sans-serif;
+            text-decoration: none;
+
+        }
+        li a:hover{
+            color: white;
+            margin-left: 3%;
+            transition: 870ms;
+        }
+    }
+}
+.contact-div{
+    opacity: 65%;
+    text-align: left;
+    .contact-header{
+        font-size: 21px;
+        margin: 0;
+        padding: 0;
+    }
+    p , i {
+        
+        cursor: pointer;
+       font-size: 13px; 
+       text-align: left;
+    }
+    i{
+        display: initial;
+    }
+}
+.social-icon{
+    padding: 1%;
+    width: 100%;
+    margin: auto;
+    text-align: center;
+    z-index:9;
+size: 2px;
+}
+
+
+
+.footer-copyright{
+    z-index: inherit 9999;;
+    border-top-style: inset;
+    border-bottom-style: inset;
+    opacity: 70%;
+    font-size: 15px;
+    text-align: center;
+    a{
+        cursor: pointer;
+        color: rgb(17, 175, 238);
+        text-decoration: none;
+    }
+
+}
+
+
+
+
+
+
+
+  .page-footer {
+      z-index:9;
+    font-family: 'ABeeZee', sans-serif;
+    width: 99%;
+    padding: 4% 0 .5% 4%;
+    border-style: double;
+    margin-top: 0pc;
+    display: grid;
+    border-top-style: inset;
+    border: thick;
+    box-shadow: 2px 2px 2px 2px #ffffffa6;
+    color: rgb(17, 175, 238);
+    letter-spacing: 1px;
+    background-color: rgb(248, 247, 247);
+}
+
+
+.path{
+size: 5px;
+}

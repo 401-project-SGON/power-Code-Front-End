@@ -10,6 +10,8 @@
     "codemirror": "^5.52.2",
     "dotenv": "^8.2.0",
     "jsonwebtoken": "^8.5.1",
+    "mdbreact": "^4.25.5",
+    "node-sass": "^4.13.1",
     "pushid": "^1.0.0",
     "react": "^16.13.1",
     "react-bootstrap": "^1.0.0",
@@ -47,5 +49,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "react-social-icons": "^4.1.0"
   }
 }
