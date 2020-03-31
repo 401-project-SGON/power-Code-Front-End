@@ -1,5 +1,6 @@
 
 const API = process.env.REACT_APP_API;
+const API2 = process.env.GOOGLE
 // const API = 'http://localhost:3002'
 
 export const login = (user_pass_name) => {
@@ -56,6 +57,25 @@ console.log('user_pass_name : ', user_pass_name);
             .catch(console.error)
             
         }  
+    
+}
+
+export const signByGoogle=()=>{
+    return{
+        type:'SIGNUPGOOGLE',
+        payload: fetch(API2)
+        .then(response => {
+            console.log('response : ',response );
+            console.log('response.json() : ',response.json() );
+            console.log('response.text() : ',response.text() );
+
+
+           return response.json()
+        })
+        .catch(console.error)
+        
+    }  
+    
     
 }
 

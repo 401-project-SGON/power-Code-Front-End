@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux'
 import cookie from 'react-cookies';
-import { login, validateToken, signup, saveImage } from '../../store/actions.js'
+import { login, validateToken, signup, saveImage,signByGoogle } from '../../store/actions.js'
 import { Form, Button, Spinner } from 'react-bootstrap'
 import './login.css'
 import Example from './../modal/modal.js'
@@ -116,6 +116,8 @@ class Signup extends React.Component {
                 <Spinner animation="border" />
 
               </If>
+
+
               <If condition={this.props.reducer.signup}>
 
                 <h4>greate! register success</h4>
@@ -125,6 +127,7 @@ class Signup extends React.Component {
 
 
             </Form>
+            <button onClick={()=>this.props.dispatch(signByGoogle())}>google</button>
 
 
 
