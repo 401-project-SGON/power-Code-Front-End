@@ -1,3 +1,4 @@
+import data from "../components/data";
 
 const API = process.env.REACT_APP_API;
 const API2 = process.env.GOOGLE
@@ -67,10 +68,10 @@ export const signByGoogle=()=>{
         .then(response => {
             console.log('response : ',response );
             console.log('response.json() : ',response.json() );
-            console.log('response.text() : ',response.text() );
+            // console.log('response.text() : ',response.text() );
 
-
-           return response.json()
+            response.json().then((data)=>{console.log('data : ', data);;return data})
+        //    return response.json()
         })
         .catch(console.error)
         
