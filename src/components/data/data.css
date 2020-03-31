@@ -1,0 +1,297 @@
+
+
+/* .courseName{
+    display: inline-block;
+    margin: 40px 20px 60px 60px;
+margin-top: -40px;
+    align-items: center;
+} */
+
+
+
+
+dl, ol, ul {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    display: flex;
+    margin-left: 240px;
+}
+
+
+
+
+
+.buttons {
+    display: flex;
+    flex: 1 0 1;
+    flex-wrap: wrap;
+    flex-direction: column;
+    padding: 1em;
+    width: 800px;
+    border: #4494a8 20px;
+    margin-left: 160px;
+    border-top-style: inset;
+    border-bottom: 5px solid #408799;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 20px;
+
+}
+
+
+p{
+font-family: 'Courier New', Courier, monospace;
+font-size: 50px;
+}
+
+
+
+
+.container h3 {
+    color: rgb(228, 13, 13);
+    align-items: center;
+    margin-left: 66px;
+    font-family: arial;
+    font-weight: normal;
+    font-size: 20px;
+}
+
+
+.h3{
+    font-size: 10px;
+}
+
+.our-team-section {
+    position: relative;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    margin-left: 300px;
+    margin-top: 90px;
+}
+.our-team-section:before {  
+    position: absolute;
+    top: -0;
+    left: 0;
+    content: " ";
+    background-size: 100% 100px;
+    width: 100%;
+    height: 100px;
+    float: left;
+    z-index: 99;
+}
+.our-team {
+    padding: 30px 0 40px;
+    background: #f9f9f9;
+    text-align: center;
+    overflow: hidden;
+    position: relative;
+    border-bottom: 5px solid #62bbd1;
+}
+.our-team:hover{
+    border-bottom: 5px solid #acabab;
+}
+
+.our-team .pic{
+    display: inline-block;
+    width: 130px;
+    height: 130px;
+    margin-bottom: 50px;
+    z-index: 1;
+    position: relative;
+}
+.our-team .pic:before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: #519cb3;
+    position: absolute;
+    bottom: 135%;
+    right: 0;
+    left: 0;
+    opacity: 1;
+    transform: scale(3);
+    transition: all 0.3s linear 0s;
+}
+.our-team:hover .pic:before{
+ height: 100%;
+    background: #145f81; 
+ }
+.our-team .pic:after {
+    content: "";
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: #ffffff00;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    transition: all 0.3s linear 0s;
+}
+.our-team:hover .pic:after{
+    background: #9fa09e;
+}
+.our-team .pic img {
+    width: 100%;
+    height: auto;
+    border-radius: 50%;
+    transform: scale(1);
+    transition: all 0.9s ease 0s;
+    box-shadow: 0 0 0 14px #f7f5ec;
+    transform: scale(0.7);
+    position: relative;
+    z-index: 2;
+}
+.our-team:hover .pic img{
+    box-shadow: 0 0 0 14px #f7f5ec;
+    transform: scale(0.7);
+}
+.our-team .team-content{ margin-bottom: 30px; }
+.our-team .title{
+    font-size: 20px;
+    font-weight: 700;
+    color: #4e5052;
+    letter-spacing: 1px;
+    text-transform: capitalize;
+    margin-bottom: 5px;
+    align-content: center;
+}
+.our-team .post{
+    display: block;
+    font-size: 15px;
+    color: #4e5052;
+    text-transform:capitalize;
+}
+.our-team .social{
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    background: #145f81;
+    position: absolute;
+    bottom: -100px;
+    left: 0;
+    transition: all 0.5s ease 0s;
+}
+.our-team:hover .social{ bottom: 0; }
+.our-team .social li{ display: inline-block; }
+.our-team .social li a{
+    display: block;
+    padding: 10px;
+    font-size: 17px;
+    color: #fff;
+    transition: all 0.3s ease 0s;
+}
+.our-team .social li a:hover{
+    color: #f8f1f1;
+    background: #f7f5ec;
+}
+@media only screen and (max-width: 990px){
+    .our-team{ margin-bottom: 30px; }
+}
+
+
+
+
+/* ////////overview///////////////////////////////////////////////////////////////////////////////////////// */
+
+
+
+
+.button:after {
+    background: #e7eaeb;
+  }
+  
+  
+  /*END BODY*/
+  
+    /*BLUE*/
+    .b-blue, .b-blue:before {
+      background: rgb(244, 246, 248);
+      background: -moz-linear-gradient(45deg, rgba(5,118,255,1) 0%, rgba(36,248,255,1) 100%);
+      background: -webkit-gradient(left bottom, right top, color-stop(0%, rgba(5,118,255,1)), color-stop(100%, rgba(36,248,255,1)));
+      background: -webkit-linear-gradient(45deg, rgba(5,118,255,1) 0%, rgba(36,248,255,1) 100%);
+      background: -o-linear-gradient(45deg, rgba(5,118,255,1) 0%, rgba(36,248,255,1) 100%);
+      background: -ms-linear-gradient(45deg, rgba(5,118,255,1) 0%, rgba(36,248,255,1) 100%);
+      background: linear-gradient(45deg, rgba(5,118,255,1) 0%, rgba(36,248,255,1) 100%);
+      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0576ff', endColorstr='#24f8ff', GradientType=1 );
+    }
+  /*END GRADIENTS*/
+  /*BASE BUTTON*/
+  .button {
+    display: inline-block;
+    position: relative;
+    border-radius: 3px;
+    text-decoration: none;
+    padding: .5em;
+    margin: .5em;
+    font-size: 2em;
+    font-weight: bold;
+    transition: all .5s;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-left: 160px;
+    width: 800px;
+    margin-top: 100px;
+  }
+  .button:hover {
+    text-shadow: 0px 0px 0px rgba(255, 255, 255, .75);
+  }
+  .button:hover:after {
+    left: 100%;
+    top: 100%;
+    bottom: 100%;
+    right: 100%;
+  }
+  .button:before {
+    content: '';
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    z-index: -1;
+    border-radius: 5px;
+    transition: all .5s;
+  }
+  .button:after {
+    content: '';
+    display: block;
+    position: absolute;
+    left: 2px;
+    top: 2px;
+    bottom: 2px;
+    right: 2px;
+    z-index: -1;
+    border-radius: 5px;
+    transition: all .5s;
+  }
+  .button2 {
+    display: inline-block;
+    font-size: 2em;
+    margin: .5em;
+    padding: .5em;
+    border-radius: 5px;
+    transition: all .5s;
+    filter: hue-rotate(0deg);
+    color: rgb(41, 94, 163);
+    text-decoration: none;
+  }
+  /*END BASE BUTTON*/
+  /*ROTATE*/
+  .rot-360-noscoop:hover {
+    filter: hue-rotate(360deg);
+    transform: rotate(360deg);
+  }
+  .rot-135:hover {
+    filter: hue-rotate(135deg);
+  }
+  .rot-90:hover {
+    filter: hue-rotate(90deg);
+  }
+  /*END ROTATE*/
+
+
+  /* /border/////////////////////////////////////////////////////////////////////////////////////////////////////////// */
+
+
