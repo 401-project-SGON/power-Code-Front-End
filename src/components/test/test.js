@@ -27,13 +27,13 @@ setAnswered([...answered,answer.question])
 }
     return(
         <section className='test'>
-        <h3>Test</h3>
+        <h3 className="testfinal">Test</h3>
         
         <ul className='q'>
             
                     <>
                     <If condition={show}>
-                <li key={data[index].question}> {data[index].question}</li>
+                <li className="liq" key={data[index].question}> {data[index].question}</li>
                 <section className='b12'>
                 <Button className='b1' variant="outline-success" onClick={()=>select(data[index],'true')}>true</Button>
                 <Button className='b2' variant="outline-warning" onClick={()=>select(data[index],'false')}>false</Button>

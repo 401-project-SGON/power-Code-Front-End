@@ -9,8 +9,21 @@
 
 .test{
     min-height: 560px;
-
+    background-color: #20485a1f;
 }
 .con{
     text-align: center;
+}
+.testfinal{
+    text-align: center;
+    font-family: 'Domine', serif;
+    margin-top: 30px;
+    font-size: 35px;
+}
+.liq{
+    font-family: 'Amiri', serif;
+    margin: 50px;
+    font-size: 20px;
+    list-style-type: none;
+
 }

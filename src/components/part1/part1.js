@@ -15,8 +15,8 @@ const Part1 = (props) => {
                         <div class="legend"></div>
                         <div class="content">
                             <div class="content-txt">
-                                <h1>POWER CODE ACADEMY</h1>
-                                <h2> </h2>
+                                <h1 className="h1">POWER CODE ACADEMY</h1>
+                                <h2> YOUR WAY TO SUCCESS </h2>
                             </div>
                         </div>
                         <div class="image">

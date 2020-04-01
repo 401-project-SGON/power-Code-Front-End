@@ -66,7 +66,7 @@ const User = props => {
       <Route exact path='/test'>
       <Test/>
       </Route>
-
+      <Route path="/contactUs" component={ContactUs}/>
       </Switch>
     </Auth>
   );

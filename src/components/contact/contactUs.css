@@ -1,0 +1,80 @@
+.contactus{
+    /* border: solid 2px; */
+    width:90%;
+    height:90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 5%;
+}
+.p{
+    margin-bottom:50px;
+    font-size: 30px;
+    letter-spacing: 5px;
+    font-style: normal;
+    color: #20485a;
+    margin-top: 10%;
+    text-align: center;
+    font-family: 'Spicy Rice', cursive;   
+     /* text-shadow:#20485a 3px 3px; */
+}
+
+.input{
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-bottom: 13px;
+    font-size: 200%;
+    padding: 10px 13px;
+    text-align: center;
+    background-color: #20485a1f;
+    box-shadow: inset 0 0.1em 0.1em 0  #20485a;
+
+
+}
+.textarea {
+position: relative;
+-webkit-appearance: none;
+display: block;
+border: 0;
+outline: 0;
+background: #fff;
+background: rgba(255, 255, 255, 0.75);
+width: 400px;
+border-radius: 0.35em;
+padding: 0.75em 1em 0.75em 1em;
+box-shadow: inset 0 0.1em 0.1em 0  #20485a;
+border: solid 1px #20485a;
+-moz-transition: all 0.35s ease-in-out;
+-webkit-transition: all 0.35s ease-in-out;
+-ms-transition: all 0.35s ease-in-out;
+transition: all 0.35s ease-in-out;
+min-height: 10em;
+/* margin-bottom:13px; */
+font-size: 200%;
+background-color: #20485a1f;
+}
+
+.submit_form {
+    cursor: pointer;
+    background: transparent;
+    background-color: #20485a1f;
+    border-radius: 5px;
+    /* border: 3px solid #20485a; */
+    color: #20485a;
+    font-weight: bolder;
+    font-size: 20px;
+    letter-spacing: 2px;
+    padding: 16px 42px;
+    transition: all 0.4s ease-in-out;
+    margin: 25px 20px 0;
+    margin-bottom: 10%;
+    width: 350px;
+    box-shadow: inset 0 0.1em 0.1em 0  #20485a;
+
+
+}
+.submit_form:hover {
+    background-color:#50a6cabe;
+}

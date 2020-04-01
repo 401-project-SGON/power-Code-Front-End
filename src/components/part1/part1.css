@@ -72,26 +72,32 @@ Reset
   height:150px;
   float:left;
   position:relative;
-  top:350px;
+  top:380px;
   -webkit-animation:content-s 7.5s infinite;
   -moz-animation:content-s 7.5s infinite;
   animation:content-s 7.5s infinite;
+
+  
 }
 .content-txt h1{
-  font-family:Arial;
+
+
   text-transform:uppercase;
   font-size:30px;
   color:rgb(14, 4, 4);
   text-align:left;
   margin-left:30px;
   padding-bottom:10px;
+  font-family: 'Amiri', serif;
+
 }
 .content-txt h2{
-  font-family:arial;
+  font-family: 'Amiri', serif;
   font-weight:normal;
   font-size:14px;
-  font-style:italic;
-  color:#fff;
+  /* font-style:italic; */
+  color:maroon;
+  font-weight: bold;
   text-align:left;
   margin-left:30px;
 }
@@ -434,4 +440,8 @@ nav select:focus{
   width:20px;
   height:1px;
   float:left;
+}
+.h1{
+  font-family: 'Amiri', serif;
+
 }

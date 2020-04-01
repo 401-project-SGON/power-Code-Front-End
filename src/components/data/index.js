@@ -99,9 +99,8 @@ const Data = (props) => {
             <section className='over-test'>
                 <If condition={overview.length > 1}>
                     <section className='overview'>
-                        <h3>overview</h3>
-
-                        <p>
+                        <h3 className="overh3">overview</h3>
+                        <p className="paragh">
                             {props.reducer.chosen.overview}
                         </p>
                         <If condition={props.reducer.chosen.courseName === 'HTML'}>
@@ -114,7 +113,7 @@ const Data = (props) => {
                         </If>
                         <section className='test2'>
                             <If condition={selectCourse}>
-                                <h3>Test yourself</h3>
+                                <h3 className="testy">Test yourself</h3>
                                 <NavLink to='/test'>{selectCourse.courseName}</NavLink>
                             </If>
                         </section>
