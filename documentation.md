@@ -39,7 +39,7 @@ Traditional education is coupled with teaching methods that exist within schools
 * `components/adminTool.js`.
 * `components/auth.js`:this is the file that conatins the ACL.
 * `components/chat.js`:this is the file that conatins the chat room .
-* `components/main.js`:this is the file that conatins the ???????????
+* `components/main.js`:this is the file that conatins the some link to  other components and paragraphs.
 * `components/header.js`:this is the file that conatins link to some features.
 * `components/footer.js`:this is the file that conatins the link  to communicate us.
 * `components/feedback.js`:this is the file that conatins form to add feedback, susuggestion and star rating.
