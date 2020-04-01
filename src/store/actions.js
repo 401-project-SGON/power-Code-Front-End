@@ -1,4 +1,3 @@
-import data from "../components/data";
 
 const API = process.env.REACT_APP_API;
 const API2 = process.env.GOOGLE
@@ -53,7 +52,7 @@ console.log('user_pass_name : ', user_pass_name);
           })
             .then(response => response.text())
             .then(response => {
-              console.log('response : ', response);
+              console.log('responsekkkkkkkk : ', response);
             })
             .catch(console.error)
             

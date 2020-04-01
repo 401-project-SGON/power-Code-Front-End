@@ -43,7 +43,7 @@ class Login extends React.Component {
     return (
       <>
       <If condition={!this.props.reducer.loggedIn}>
-      <Example buttonHandle={this.handleSubmit} button={'SignIn'} name='SignIn' closehand={this.props.reducer.signing} header='Sign in'>
+      <Example buttonHandle={this.handleSubmit} button={'SignIn'} name='SignIn' closehand={this.props.reducer.signing} header='Sign in' shape='button'>
 
      
         <section className='form'>
@@ -67,7 +67,7 @@ class Login extends React.Component {
         </Example>
         </If>
          <If condition={this.props.reducer.loggedIn}>
-         <Button variant="secondary" onClick={() => this.props.dispatch(logout())}>Log Out</Button>
+         <Button variant="primary" onClick={() => this.props.dispatch(logout())}>Log Out</Button>
         
        </If>
        </>

@@ -15,13 +15,15 @@ code {
 
 
 .main{
-  position: relative;
+  /* position: relative; */
   min-height: 100%;
   
   }
   .c{
   /* position: absolute; */
+      /* position: -webkit-sticky; */
       position: fixed;
       bottom: 0;
       right: 0;
+     
   }

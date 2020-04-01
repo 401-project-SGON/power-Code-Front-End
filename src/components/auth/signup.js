@@ -17,7 +17,7 @@ class Signup extends React.Component {
 
   constructor(props) {
     super(props);
-    this.state = { username: '', password: '', email: '', phone: '', url: '' };
+    this.state = { username: '', password: '', email: 'not exsist', phone: 'not exsist', url: 'https://www.pngitem.com/pimgs/m/111-1114791_male-user-icon-hd-png-download.png' };
   }
 
   handleImage = (e) => {
@@ -70,7 +70,7 @@ class Signup extends React.Component {
   render() {
     return (
       <If condition={!this.props.reducer.loggedIn}>
-        <Example buttonHandle={this.handleSubmit_signup} button={'signup'} name='SignUp' closehand={this.props.reducer.signing} header='Sign up'>
+        <Example buttonHandle={this.handleSubmit_signup} button={'signup'} name='SignUp' closehand={this.props.reducer.signing} header='Sign up' shape='button'>
 
           <section className='form'>
 
@@ -108,9 +108,6 @@ class Signup extends React.Component {
                 <Form.Control size="sm" name='password' onChange={this.handleChange} placeholder="Enter password" />
               </Form.Group>
 
-
-
-
               <If condition={this.props.reducer.signing}>
 
                 <Spinner animation="border" />
@@ -120,7 +117,7 @@ class Signup extends React.Component {
 
               <If condition={this.props.reducer.signup}>
 
-                <h4>greate! register success</h4>
+                <h4>Great! Go sign in</h4>
 
               </If>
 

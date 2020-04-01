@@ -2,6 +2,7 @@ import React from 'react'
 import './footer.scss'
 import { SocialIcon } from 'react-social-icons';
 import { NavLink ,Link} from 'react-router-dom'
+import Feedback from '../feedback/feedback.js'
 
 
 
@@ -18,8 +19,9 @@ const Footer = (props) => {
             <div class="linkes-list">
                     <h6 className="contact-header">CONTACT</h6>
                     <p className="contact-p"> <i className="fa fa-map-marker"></i> Amman, Jordan</p>
-                    <p className="contact-p"><NavLink to="/contactUs" >Contact Us</NavLink></p>
-                    <p className="contact-p"> <i className="	fa fa-mobile-phone"></i> + 962 000 000 001</p>
+                    <p className="contact-p"><NavLink to="/contactUs" >Contact Us</NavLink>
+                    </p>
+                    <p className="contact-p"><Feedback/>   </p>
                     <p className="contact-p"><i className="fa fa-inbox"></i> PowerCode@gmail.com</p>
                 </div>
 

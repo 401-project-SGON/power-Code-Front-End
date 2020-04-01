@@ -2,7 +2,9 @@ import React ,{useState, Children} from 'react'
 import {Button,Modal} from 'react-bootstrap'
 
 
-
+const If = props => {
+  return props.condition ? props.children : null;
+};
 function Example(props) {
     const [show, setShow] = useState(false);
   
@@ -19,9 +21,16 @@ function Example(props) {
   
     return (
       <>
-        <Button variant="outline-info" onClick={handleShow}>
+      <If condition={props.shape==='button'}>
+      <Button variant="outline-info" onClick={handleShow}>
           {props.name}
         </Button>
+      </If>
+      <If condition={props.shape==='link'}>
+      <p onClick={handleShow}>
+          {props.name}
+        </p>
+      </If>
   
         <Modal show={show} onHide={handleClose2}>
           <Modal.Header closeButton>

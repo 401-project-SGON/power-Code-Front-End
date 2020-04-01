@@ -4,8 +4,9 @@ import {sendFeedback} from './../../store/actions.js'
 import {If,Then} from './../if/index.js'
 import StarRatingComponent from 'react-star-rating-component';
 import {Button} from 'react-bootstrap'
+import Modal from '../modal/modal.js'
 
-import './feedback.css'
+// import './feedback.css'
 
 
 const Feedback =(props)=>{
@@ -22,7 +23,8 @@ const Feedback =(props)=>{
 
     }
     const handlesubmit = (e)=>{
-        e.preventDefault()
+        if(e) e.preventDefault()
+       
         console.log('feedback : ',feedback );
         console.log('suggestions : ', suggestions);
         let fd= {
@@ -41,10 +43,11 @@ const Feedback =(props)=>{
       }
     return(
         <>
+        <Modal buttonHandle={handlesubmit} button={'Submit'} name='feedback' header='Feedback' shape='link'>
         <section className='feedback_form'>
         <form className='feedbackform' onSubmit={handlesubmit}>
         
-        <p>Feedback <img src='https://cdn1.iconfinder.com/data/icons/feedback-review/64/x-05-512.png' height='30' width='35' /></p>
+        <div><img src='https://cdn1.iconfinder.com/data/icons/feedback-review/64/x-05-512.png' height='30' width='35' /> Feedback</div>
                 <textarea className='texta'  placeholder='Enter your feedback' onChange={handlechange}  name='feedback' required/>
             
                 <textarea className='texta' placeholder='Enter your suggestions' onChange={handlechange}  name='suggestions'/>
@@ -57,9 +60,9 @@ const Feedback =(props)=>{
           onStarClick={onStarClick}
         />
       </div>
-      <div className='submitbtn'>
-      <Button  variant="outline-primary">Submit</Button>{' '}
-      </div>
+      {/* <div className='submitbtn'>
+      <Button  variant="outline-primary">Submit---</Button>{' '}
+      </div> */}
         </form>
         </section>
 
@@ -72,7 +75,7 @@ const Feedback =(props)=>{
             </Then>
         </If>
 
-
+        </Modal>
 
         </>
         
