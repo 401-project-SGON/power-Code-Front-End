@@ -36,12 +36,10 @@ const User = props => {
     <Auth capability="read">
       <ChatBox/>
     <Switch>
-      <Route exact path='contactUs'>
+      {/* <Route exact path='contactUs'>
       <ContactUs/>
-      </Route>
-    <Route exact path='/'>
-        <Main/>
-      </Route>
+      </Route> */}
+   
       <Route exact path='/user'>
         <UserInfo />
       </Route>
@@ -97,10 +95,13 @@ const App = (props) => {
       <section className='main'>
 
         <Header />
-
+        <Route exact path='/'>
+        <Main/>
+        </Route>
         <User />
         <Editor />
         <Admin />
+        
         <Footer />
         </section>
   );

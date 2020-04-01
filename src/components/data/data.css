@@ -6,7 +6,9 @@
     align-items: center;
 }
 
-
+.coursesN{
+    min-height: 560px;
+}
 
 .overview{
     margin: 0px 0px 0px 100px;
@@ -50,12 +52,15 @@
     align-items: center;
 
 }
-ul{
+.courses5 {
     margin-left: 29%;
-    margin-top: 4px;
+    margin-top: 30px;
 
 }
 
-
+.spin{
+    margin-left: 43%;
+    margin-top: 30px;
+}
 
 

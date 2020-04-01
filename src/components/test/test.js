@@ -28,9 +28,7 @@ setAnswered([...answered,answer.question])
     return(
         <section className='test'>
         <h3>Test</h3>
-        <p>
-            answer with true and false
-        </p>
+        
         <ul className='q'>
             
                     <>

@@ -48,14 +48,15 @@ const Data = (props) => {
 
     return (
         <section className='coursesN'>
-
+<div className='spin'>
             <If condition={props.reducer.courseRendering}>
                 <Spinner animation="grow" />
                 <Spinner animation="grow" />
                 <Spinner animation="grow" />
 
             </If>
-            <ul>
+            </div>
+            <div className='courses5' >
                 {props.reducer.data.map(item => {
                     console.log('item : ', item);
 
@@ -94,7 +95,7 @@ const Data = (props) => {
 
                 })}
 
-            </ul>
+            </div>
             <section className='over-test'>
                 <If condition={overview.length > 1}>
                     <section className='overview'>
@@ -104,15 +105,12 @@ const Data = (props) => {
                             {props.reducer.chosen.overview}
                         </p>
                         <If condition={props.reducer.chosen.courseName === 'HTML'}>
-                            <img src='https://www.linkedin.com/media-proxy/ext?w=512&h=288&hash=S4CGRzcLjuBH7S9XSM3p8aoPbhs%3D&ora=1%2CaFBCTXdkRmpGL2lvQUFBPQ%2CxAVta5g-0R6plxVUzgUv5K_PrkC9q0RIUJDPBy-gXCWu-NKfYXDpfcXYZLOkoVsTcC0FmQwxeu-1QTapG43ma90'
-                                width='425' />
+                        <iframe width="425" height='235' src="https://www.youtube.com/embed/u0OeZfIfBRI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                         </If>
                         <If condition={props.reducer.chosen.courseName === 'CSS'}>
-                            <img src='https://hackernoon.com/drafts/kq5m3yzf.png' width='425' />
-
+                        <iframe width="425" height='235' src="https://www.youtube.com/embed/qAqP5y_eSB4?list=PUt8Sa48zWN_WcordE7TaUBg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                         </If><If condition={props.reducer.chosen.courseName === 'JavaScript'}>
-                            <img src='https://cdn.lynda.com/course/417077/417077-637199562454668761-16x9.jpg'
-                                width='425' />
+                        <iframe width="425" height='235' src="https://www.youtube.com/embed/OSWppEa2Zac" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                         </If>
                         <section className='test2'>
                             <If condition={selectCourse}>
@@ -137,7 +135,7 @@ const Data = (props) => {
                                 {levels.map(item => {
                                     return (
                                         <div class="tab">
-                                            <input type="radio" id={`rd${item._id}`} name="rd" />
+                                            <input className='tapinput' type="radio" id={`rd${item._id}`} name="rd" />
 
                                             <label onClick={() => choseLevel(item)} key={item._id} class="tab-label" for={`rd${item._id}`}>
                                                 {item.levelName}
@@ -159,7 +157,7 @@ const Data = (props) => {
                             
 
                             <div class="tab">
-                            <input type="radio" id="rd3" name="rd" />
+                            <input className='tapinput' type="radio" id="rd3" name="rd" />
                             <label for="rd3" class="tab-close">Close level</label>
                         </div>
                                   
