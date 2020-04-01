@@ -1,9 +1,16 @@
 .example{
-    margin: 26px;
+    margin: 50px;
+    font-family: 'Literata', serif;
+    font-size: 17px;
+    width: 90%;
+   
 }
 
 .title5{
     margin: 21px;
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    margin-top: 50px;
 
 }
 .code{
@@ -16,5 +23,5 @@
 
 }
 .btnc{
-    margin-left: 24px;
+    margin-left: 52px;
 }

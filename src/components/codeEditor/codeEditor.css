@@ -4,7 +4,9 @@
   display: flex;
   /* width: 450px; */
     height: 440px;
-    margin: 70px;
+    margin: 40px;
+    margin-left: 12%;
+
 }
 
     html {

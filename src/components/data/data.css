@@ -27,9 +27,11 @@
      border-radius: 10px;
      width:400px;
       height:235px ;
-      margin-right: 40px;
-     box-shadow:   0.2em 0.2em 0.15em 0.15em  #20485a;
+      /* margin-right: 40px; */
+     box-shadow:   0.2em 0.2em 0.2em 0.2em  #417bff59;
      padding: 10%;
+     margin-right: -235px;
+
  
 }
 .test2 a{
@@ -74,26 +76,41 @@ margin-left: 27%;}
 }
 
 .imgp{
-    font-family: 'Domine', serif;
+    font-family: 'Roboto', sans-serif;
     font-size: xx-large;
+    text-align: center;
+
 }
 .overh3{
-    font-family: 'Domine', serif;
+    font-family: 'Roboto', sans-serif;
+    padding-bottom: 10px;
+    margin-top: 22px;
+
 }
    
 .paragh{
     /* border: solid 1px ; */
-    font-family: 'Amiri', serif;
+    font-family: 'Literata', serif;
     font-size: large;
-    width: 95%;
+    /* width: 95%; */
     height: auto;
-    padding:15px;
+    /* padding:15px; */
     border-radius: 10px;
-    box-shadow: inset  0.2em 0.2em 0.15em 0.15em  #20485a;
+    box-shadow: inset  0.2em 0.2em 0.15em 0.15em #417bff59;
+    padding: 25px;
+    margin-bottom: 35px;
+    width: 126%;
+
+
+
 }
 .testy{
-    font-family: 'Domine', serif;
+    font-family: 'Roboto', sans-serif;
  
+}
+.tab-label{
+    font-family: 'Roboto', sans-serif;
+
 }
 
 

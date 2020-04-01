@@ -14,16 +14,17 @@ code {
 
 
 
-.main{
-  /* position: relative; */
-  min-height: 100%;
+ .main{ 
+   /* position: relative;  */
+   min-height: 100%; 
   
-  }
-  .c{
-  /* position: absolute; */
-      /* position: -webkit-sticky; */
-      position: fixed;
+   }
+  /* .c{  */
+  /* position: absolute;  */
+       /* position: -webkit-sticky; 
+       position: fixed;
+       position: sticky;
       bottom: 0;
       right: 0;
      
-  }
+  }  */

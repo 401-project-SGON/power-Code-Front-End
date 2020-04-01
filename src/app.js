@@ -16,25 +16,20 @@ import Test from './components/test/test.js'
 import {DropdownButton,Dropdown} from 'react-bootstrap'
 // import Chat from './components/chat/chat.js'
 import ContactUs from './components/contact/contactUs.js'
+import { StickyContainer, Sticky } from 'react-sticky';
 
 
 
-const ChatBox= ()=>{
-  return(
-<section className='c'>
-<DropdownButton id="dropdown-button-drop-up" drop='up' title="let's chat">
-  <Dropdown.Item as="button"><Chat/></Dropdown.Item>
-
-</DropdownButton>
-</section>
-  )
-}
 
 
+
+let renderCount =0
 const User = props => {
   return (
+
     <Auth capability="read">
-      <ChatBox/>
+
+
     <Switch>
       {/* <Route exact path='contactUs'>
       <ContactUs/>
