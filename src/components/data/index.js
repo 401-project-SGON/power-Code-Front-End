@@ -56,7 +56,7 @@ const Data = (props) => {
 
                 </If>
             </div>
-            <div class="container" >
+            <div class="container-cards" >
                 {props.reducer.data.map(item => {
                     console.log('item : ', item);
 

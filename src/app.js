@@ -31,10 +31,7 @@ const User = props => {
 
 
     <Switch>
-      {/* <Route exact path='contactUs'>
-      <ContactUs/>
-      </Route> */}
-   
+    
       <Route exact path='/user'>
         <UserInfo />
       </Route>
@@ -76,10 +73,14 @@ const Editor = props => {
 
 const Admin = props => {
   return (
-    <Auth capability="delete">
-        <AdminTool/>
+   
 
+    <Auth capability="delete">
+       <Route exact path='/admintool'>
+        <AdminTool/>
+        </Route>
     </Auth>
+
   );
 };
 

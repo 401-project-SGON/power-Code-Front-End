@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react';
 import { connect } from 'react-redux'
 import { getUsers ,getFeedback} from '../../store/actions.js'
 import { If, Then } from '../if'
+import {Table} from 'react-bootstrap'
 
 const AdminTool  = (props) =>{
 
@@ -12,36 +13,44 @@ const AdminTool  = (props) =>{
         console.log('props.reducer.users : ', props.reducer.users);
 
     },[])
+    let i =0
 
     return(
+        
         <section className='adminTool'>
-            <h3>Usres Data</h3>
-        <ul>
-        {props.reducer.users.map(user => {
-            return (
-                
-                <li key={user._id}>
-                    {user.username} -  {user.role} - {user.email} - {user.phone}
-                </li>
-               
-                
-            )
-        })}
-    </ul>
 
-        <h3> feedback from all users</h3>
-    <ul>
-        {props.reducer.feedback.map(item => {
+            <Table striped bordered hover variant="dark">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Username</th>
+      <th>Role</th>
+      <th>Email</th>
+      <th>Phone number</th>
+
+    </tr>
+  </thead>
+  <tbody>
+    
+    {props.reducer.users.map(user => {
+
             return (
-                
-                <li key={item._id}>
-                   feedback: {item.feedback} , suggestion:  {item.suggestions}, user: {item.user} 
-                </li>
-               
-                
+                <tr>
+               <td>{i++}</td>
+               <td>{user.username}</td>
+               <td>{user.role}</td>
+               <td>{user.email}</td>
+               <td>{user.phone}</td>
+               </tr>
             )
         })}
-    </ul>
+    
+
+    
+  
+  </tbody>
+</Table>
+   
     </section>
     )
 }

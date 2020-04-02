@@ -5,22 +5,14 @@ import {If,Then} from './../if/index.js'
 import StarRatingComponent from 'react-star-rating-component';
 import {Button} from 'react-bootstrap'
 import Modal from '../modal/modal.js'
-
 // import './feedback.css'
-
-
 const Feedback =(props)=>{
-
-
     const [feedback,setFeedback] = useState('')
     const [suggestions,setSuggestions] = useState('')
     const [rating,setRating] = useState(4)
-
-
     const handlechange = (e)=>{
         if(e.target.name==='feedback')setFeedback({[e.target.name]: e.target.value})
         if(e.target.name==='suggestions')setSuggestions({[e.target.name]: e.target.value})
-
     }
     const handlesubmit = (e)=>{
         if(e) e.preventDefault()
@@ -35,7 +27,6 @@ const Feedback =(props)=>{
         console.log('fd : ', fd);
         props.sendFeedback(fd)
     }
-
     const onStarClick=(nextValue, prevValue, name) =>{
         // this.setState({rating: nextValue});
         setRating(nextValue)
@@ -47,10 +38,10 @@ const Feedback =(props)=>{
         <section className='feedback_form'>
         <form className='feedbackform' onSubmit={handlesubmit}>
         
-        <div><img src='https://cdn1.iconfinder.com/data/icons/feedback-review/64/x-05-512.png' height='30' width='35' /> Feedback</div>
-                <textarea className='texta'  placeholder='Enter your feedback' onChange={handlechange}  name='feedback' required/>
-            
+                <textarea className='texta'  placeholder='Enter your feedback' onChange={handlechange}  width="460" height="146" name='' required/>
+            <hr />
                 <textarea className='texta' placeholder='Enter your suggestions' onChange={handlechange}  name='suggestions'/>
+        <div><img src='https://media2.giphy.com/media/10EYU9Z0wDPa6c/source.gif' height='100' width='300' name="feedd"/></div>
             <div>
         {/* <h2>Rating Our App : {rating}</h2> */}
         <StarRatingComponent
@@ -65,18 +56,13 @@ const Feedback =(props)=>{
       </div> */}
         </form>
         </section>
-
         
-
-
         <If condition={props.reducer.feedbacksent}>
             <Then>
                 <h3>Thank you for your feedback</h3>
             </Then>
         </If>
-
         </Modal>
-
         </>
         
     )
@@ -91,4 +77,3 @@ const mapDispatchToProps = { sendFeedback };
     mapStateToProps,
     mapDispatchToProps
   )(Feedback);
-

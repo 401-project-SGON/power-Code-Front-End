@@ -18,7 +18,8 @@ let initialState = {
     signing:false,
     signup:false,
     feedbacksent:false,
-    feedback:[]
+    feedback:[],
+    admin:false
 }
 
 
@@ -42,8 +43,12 @@ export default (state = initialState, action) => {
             cookie.save('auth', token)
             state = { ...state, token: token }
             state = { ...state, loggedIn: true }
+            
             state = { ...state, user }
             console.log('user : ', user);
+            if(state.user.capabilities.includes('delete')){
+                state={...state,admin:true}
+            }
             state={...state,signing:false}
 
             return state;

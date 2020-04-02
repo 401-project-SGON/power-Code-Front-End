@@ -41,7 +41,6 @@ const Header = (props) => {
                     <Nav className="mr-auto">
                         <Nav.Link ><NavLink style={{textDecoration:'none',fontFamily:" 'Roboto', sansSerif"}} to='/data'>Courses</NavLink></Nav.Link>
                         <Nav.Link ><NavLink style={{textDecoration:'none',fontFamily:" 'Roboto', sansSerif"}} to='/code'>Code Editor</NavLink></Nav.Link>
-                        {/* <Nav.Link ><NavLink to='/user'><img src='https://cdn2.iconfinder.com/data/icons/circular-icons-filled/78/Circular_Person-512.png' height='30' width='30' /></NavLink></Nav.Link> */}
                         {/* <Nav.Link ><NavLink to='/feedback'><img src='https://cdn1.iconfinder.com/data/icons/feedback-review/64/x-05-512.png' height='30' width='35' /></NavLink></Nav.Link> */}
                         <ChatBox/>
 
@@ -55,6 +54,11 @@ const Header = (props) => {
                         <Login />
 
                     </Then></If>
+                    <If condition={props.reducer.admin} ><Then>
+
+                    <Nav.Link ><NavLink to='/admintool'><img src='https://cdn2.hubspot.net/hub/189007/file-526634248-png/google-apps-admin-panel-icon.png' height='35' width='35' /></NavLink></Nav.Link>
+                    </Then></If>
+
                     <If condition={props.reducer.loggedIn}>
                         <Then>
                             <NavDropdown style={{textDecoration:'none',fontFamily:" 'Roboto', sansSerif"}} title={props.reducer.user.username} id="basic-nav-dropdown">
