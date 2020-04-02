@@ -67,6 +67,9 @@ export default (state = initialState, action) => {
                 try {
                     let user = jwt.verify(payload, process.env.REACT_APP_SECRET);
                     console.log('user : ', user);
+                    if(user.capabilities.includes('delete')){
+                        state={...state,admin:true}
+                    }
                     state = { ...state, loggedIn: true }
                     cookie.save('auth', payload)
                     state = { ...state, token: payload }
@@ -95,6 +98,7 @@ export default (state = initialState, action) => {
             state = { ...state, loggedIn: false }
             state = { ...state, token: null }
             state = { ...state, user: {} }
+            state = {...state,admin:false}
             cookie.remove('auth')
 
             return state
