@@ -1,7 +1,7 @@
 
-const API = process.env.REACT_APP_API;
+// const API = process.env.REACT_APP_API;
 const API2 = process.env.GOOGLE
-// const API = 'http://localhost:3002'
+const API = 'http://localhost:3002'
 
 export const login = (user_pass_name) => {
     return{
@@ -185,3 +185,69 @@ export const getFeedback = () =>{
 
     
 }
+
+export const postCourse = (payload)=>{
+    return{
+        type:'POSTCOURSE',
+        payload:fetch(`${API}/course`, {
+            method: 'post',
+            mode: 'cors',
+            cache: 'no-cache',
+            headers: {
+                'Content-Type': 'application/json'
+                // 'Content-Type': 'application/x-www-form-urlencoded',
+              },
+            body: JSON.stringify(payload),
+          })
+            // .then(response => response.text())
+            .then(response => {
+              console.log('responsekkkkkkkk : ', response);
+            })
+            .catch(console.error)
+            
+        }  
+}
+export const postLevel = (payload)=>{
+    return{
+        type:'POSTCOURSE',
+        payload:fetch(`${API}/level`, {
+            method: 'post',
+            mode: 'cors',
+            cache: 'no-cache',
+            headers: {
+                'Content-Type': 'application/json'
+                // 'Content-Type': 'application/x-www-form-urlencoded',
+              },
+            body: JSON.stringify(payload),
+          })
+            // .then(response => response.text())
+            .then(response => {
+              console.log('responsekkkkkkkk : ', response);
+            })
+            .catch(console.error)
+            
+        }  
+}
+
+export const postSubject = (payload)=>{
+    return{
+        type:'POSTCOURSE',
+        payload:fetch(`${API}/subject`, {
+            method: 'post',
+            mode: 'cors',
+            cache: 'no-cache',
+            headers: {
+                'Content-Type': 'application/json'
+                // 'Content-Type': 'application/x-www-form-urlencoded',
+              },
+            body: JSON.stringify(payload),
+          })
+            // .then(response => response.text())
+            .then(response => {
+              console.log('responsekkkkkkkk : ', response);
+            })
+            .catch(console.error)
+            
+        }  
+}
+

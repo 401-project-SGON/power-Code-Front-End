@@ -1,57 +1,77 @@
 
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { connect } from 'react-redux'
-import { getUsers ,getFeedback} from '../../store/actions.js'
+import { getUsers, getFeedback } from '../../store/actions.js'
+import Users from './users.js'
+import ManageCourse from './manageCourse.js'
+import { Button } from 'react-bootstrap'
 import { If, Then } from '../if'
-import {Table} from 'react-bootstrap'
+import AddLevel from './addLevel.js'
+import AddSubject from './addSubject.js'
 
-const AdminTool  = (props) =>{
 
-    useEffect(()=>{
-        props.getUsers()
-        props.getFeedback()
-        console.log('props.reducer.users : ', props.reducer.users);
 
-    },[])
-    let i =0
 
-    return(
-        
-        <section className='adminTool'>
 
-            <Table striped bordered hover variant="dark">
-  <thead>
-    <tr>
-      <th>#</th>
-      <th>Username</th>
-      <th>Role</th>
-      <th>Email</th>
-      <th>Phone number</th>
+const AdminTool = (props) => {
 
-    </tr>
-  </thead>
-  <tbody>
-    
-    {props.reducer.users.map(user => {
+    const [showUsers, setShowUsers] = useState(false)
+    const [showCourse, setShowCourse] = useState(false)
+    const [showLevel, setShowLevel] = useState(false)
+    const [showSub, setShowSub] = useState(false)
 
-            return (
-                <tr>
-               <td>{i++}</td>
-               <td>{user.username}</td>
-               <td>{user.role}</td>
-               <td>{user.email}</td>
-               <td>{user.phone}</td>
-               </tr>
-            )
-        })}
-    
 
-    
-  
-  </tbody>
-</Table>
-   
-    </section>
+    const showU = () => {
+        if (showUsers) setShowUsers(false)
+        if (!showUsers) setShowUsers(true)
+    }
+    const showC = () => {
+        if (showCourse) setShowCourse(false)
+        if (!showCourse) setShowCourse(true)
+    }
+    const showL = () => {
+        if (showLevel) setShowLevel(false)
+        if (!showLevel) setShowLevel(true)
+    }
+    const showS = () => {
+        if (showSub) setShowSub(false)
+        if (!showSub) setShowSub(true)
+    }
+
+    return (
+        <>
+            <Button onClick={showU} variant="outline-dark">show all users</Button>
+
+            <If condition={showUsers}>
+                <Then><Users /></Then>
+
+            </If>
+            <Button onClick={showC} variant="outline-dark">Add new course</Button>
+
+            <If condition={showCourse}>
+                <Then> <ManageCourse />
+                </Then>
+
+            </If>
+
+            <Button onClick={showL} variant="outline-dark">Add new level</Button>
+
+            <If condition={showLevel}>
+                <Then> <AddLevel />
+                </Then>
+
+            </If>
+
+
+            <Button onClick={showS} variant="outline-dark">Add new subject</Button>
+
+            <If condition={showSub}>
+                <Then> <AddSubject />
+                </Then>
+
+            </If>
+        </>
+
     )
 }
 
@@ -68,7 +88,7 @@ const mapStateToProps = state => ({
 });
 
 
-const mapDispatchToProps = { getUsers,getFeedback };
+const mapDispatchToProps = { getUsers, getFeedback };
 
 export default connect(
     mapStateToProps,
