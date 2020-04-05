@@ -8,7 +8,7 @@ import { Button } from 'react-bootstrap'
 import { If, Then } from '../if'
 import AddLevel from './addLevel.js'
 import AddSubject from './addSubject.js'
-
+import './adminTool.css'
 
 
 
@@ -39,7 +39,7 @@ const AdminTool = (props) => {
     }
 
     return (
-        <>
+            <section className='adminTool'>
             <Button onClick={showU} variant="outline-dark">show all users</Button>
 
             <If condition={showUsers}>
@@ -70,7 +70,8 @@ const AdminTool = (props) => {
                 </Then>
 
             </If>
-        </>
+
+            </section>
 
     )
 }
