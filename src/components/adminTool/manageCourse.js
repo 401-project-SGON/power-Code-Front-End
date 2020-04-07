@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import { getUsers, getFeedback, levelsNotRendered, postCourse } from "../../store/actions.js";
 import { If, Then } from "../if";
 import { Form, Button,Spinner } from "react-bootstrap";
+import './adminTool.css'
 
 const ManageCourse = props => {
 
@@ -10,6 +11,9 @@ const ManageCourse = props => {
     const [course, setcourse] = useState('')
     const [overview, setoverview] = useState('')
     const [question, setquestion] = useState('')
+    const [image,setImage] =useState('')
+    const [video,setVideo] =useState('')
+
     const [answer, setanswer] = useState({ "answer": 'true' })
 
     const [pendding, setPendding] = useState(false)
@@ -28,6 +32,8 @@ const ManageCourse = props => {
     const change = (e) => {
         if (e.target.name === 'courseName') setcourse({ [e.target.name]: e.target.value })
         if (e.target.name === 'overview') setoverview({ [e.target.name]: e.target.value })
+        if (e.target.name === 'image') setImage({ [e.target.name]: e.target.value })
+        if (e.target.name === 'video') setVideo({ [e.target.name]: e.target.value })
         if (e.target.name === 'question') setquestion({ [e.target.name]: e.target.value })
         if (e.target.name === 'answer') setanswer({ [e.target.name]: e.target.value })
        
@@ -38,6 +44,8 @@ const ManageCourse = props => {
         let data = {
             "courseName": course.courseName,
             "overview": overview.overview,
+            "image": image.image,
+            "video": video.video,
             "questions": questions
         }
         console.log('data :', data);
@@ -58,7 +66,16 @@ const ManageCourse = props => {
                     <Form.Control as='textarea' onChange={change} name='overview' type="text" placeholder="overview" />
                 </Form.Group>
                 <Form.Group controlId="formBasicEmail">
-                    <Form.Control onChange={change} name='question' type="text" placeholder="question - 1" />
+                    <Form.Control onChange={change} name='image' type="text" placeholder="course image url" />
+                </Form.Group>
+                
+                <Form.Group controlId="formBasicEmail">
+                    <Form.Control onChange={change} name='video' type="text" placeholder="course youtube video url" />
+                </Form.Group>
+
+                <Form.Group controlId="formBasicEmail">
+                <Form.Label>Question - 1</Form.Label>
+                    <Form.Control onChange={change} name='question' type="text" placeholder="type question" />
                 </Form.Group>
 
                 <Form.Group controlId="exampleForm.SelectCustom">
@@ -74,8 +91,10 @@ const ManageCourse = props => {
 
                     return (
                         <>
+                            <hr className='hr'/>
                             <Form.Group controlId="formBasicEmail">
-                                <Form.Control onChange={change} name='question' type="text"  placeholder={`question - ${idx + 2}`} />
+                            <Form.Label>{`question - ${idx + 2}`}</Form.Label>
+                                <Form.Control onChange={change} name='question' type="text"  placeholder={`type question`} />
                             </Form.Group>
 
                             <Form.Group controlId="exampleForm.SelectCustom">

@@ -1,7 +1,7 @@
 
-// const API = process.env.REACT_APP_API;
+const API = process.env.REACT_APP_API;
 const API2 = process.env.GOOGLE
-const API = 'http://localhost:3002'
+// const API = 'http://localhost:3002'
 
 export const login = (user_pass_name) => {
     return{

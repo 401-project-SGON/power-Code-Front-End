@@ -2,12 +2,14 @@ import React, { useEffect, useState } from 'react'
 import { connect } from 'react-redux'
 import { NavLink } from 'react-router-dom'
 import Code from './../codeEditor/codeEditor.js'
-import {Button} from 'react-bootstrap'
+import {Button,Dropdown,FormControl} from 'react-bootstrap'
 import './index.css'
 
 const If = props => {
     return props.condition ? props.children : null;
 };
+
+
 const Subject = (props) => {
 
     const [show,setShow] = useState(true)
