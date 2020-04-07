@@ -21,3 +21,8 @@
     border: 0;
     border-top: 1px solid rgba(0,0,0,1.1);
 }
+
+.table-dark.table-bordered{
+    margin: 25px;
+    width: -webkit-fill-available;
+}

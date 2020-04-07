@@ -38,6 +38,8 @@ const AddLevel = props => {
 
     return (
         <section className="manage">
+            <h3>Create new level</h3>
+
             <Form onSubmit={submitHand}>
                 <Form.Group controlId="formBasicEmail">
                     <Form.Control onChange={change} name='levelName' placeholder="add level name" />

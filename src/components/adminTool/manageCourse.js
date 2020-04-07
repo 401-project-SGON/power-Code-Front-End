@@ -58,6 +58,7 @@ const ManageCourse = props => {
 
     return (
         <section className="manage">
+            <h3>Create new course</h3>
             <Form onSubmit={submitHand}>
                 <Form.Group controlId="formBasicEmail">
                     <Form.Control onChange={change} name='courseName' placeholder="courseName" />
