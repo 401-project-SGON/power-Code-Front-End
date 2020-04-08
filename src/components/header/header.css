@@ -1,7 +1,7 @@
 .btn-outline-info{
     margin-left: 5px;
-    color: #20485a;
-    border-color:#20485a;
+    color: #5fbef6;
+    border-color: #5fbef6;
 }
 
 .loginIcon{
@@ -30,5 +30,20 @@ font-family: 'Amiri', serif;
     color: #417bff;
 }
 
+
+
+@media only screen and (max-width: 992px) {
+
+.c {
+    margin-top: 6px;
+    margin-left: 0px;
+    font-family: 'Roboto', sansSerif;
+    color: #417bff;
+}
+.profileImg{
+    display: none;
+}
+
+}
 
 
