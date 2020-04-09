@@ -25,3 +25,49 @@
 .btnc{
     margin-left: 52px;
 }
+
+@media only screen and (max-width: 600px) {
+    .subject{
+        width: 100%;
+
+    }
+    .example{
+        margin: 16px;
+        font-family: 'Literata', serif;
+        font-size: 17px;
+        width: 90%;
+       
+    }
+    
+    .title5{
+        margin: 21px;
+        text-align: center;
+        font-family: 'Roboto', sans-serif;
+        margin-top: 50px;
+    
+    }
+    .code{
+        margin: 20px;
+        width: 90%;
+
+    
+    }
+    
+    .code1{
+        color: white;
+        width: 90%;
+
+    }
+    .btnc{
+        margin-left: 52px;
+    }
+
+
+        /* .iframe{
+            width: 318px;
+        
+        } */
+        
+        
+        
+}

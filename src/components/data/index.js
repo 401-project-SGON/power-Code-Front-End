@@ -110,7 +110,7 @@ const Data = (props) => {
                             {props.reducer.chosen.overview}
                         </p>
                         
-                        <iframe src={`https://www.youtube.com/embed/${vidurl}`} frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        <iframe className='courseV' src={`https://www.youtube.com/embed/${vidurl}`} frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
                         
                         {/* <If condition={props.reducer.chosen.courseName === 'CSS'}>

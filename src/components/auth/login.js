@@ -67,7 +67,7 @@ class Login extends React.Component {
         </Example>
         </If>
          <If condition={this.props.reducer.loggedIn}>
-         <Button variant="primary" onClick={() => this.props.dispatch(logout())}>Log Out</Button>
+         <Button bsStyle="default" variant="primary" onClick={() => this.props.dispatch(logout())}>Log Out</Button>
         
        </If>
        </>
