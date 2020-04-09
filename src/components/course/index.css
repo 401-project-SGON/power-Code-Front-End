@@ -26,7 +26,7 @@
     margin-left: 52px;
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 992px) {
     .subject{
         width: 100%;
 

@@ -106,6 +106,7 @@ z-index: 9999;
     position: relative;
     height: 100%;
     margin-left: 10px;
+
   }
   
   .userh1{
@@ -149,4 +150,166 @@ z-index: 9999;
       width:0%;
     }
     
+  }
+
+
+  @media only screen and (max-width: 992px) {
+
+    .profileImge{
+      margin-top: 30px;
+    width: 150px;
+    height: 150px;
+    border-radius: 70px;
+    border: solid 2px #007BFF;
+    transition: transform .2s;
+    z-index: -1;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .profileImge:hover {
+    transform: scale(1.2);
+  }
+  .userInfo{
+  margin-bottom: 800px;
+  z-index: 9999;
+  }
+  .info{
+      font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+      z-index: 9999;
+      border-radius: 15px;
+      text-align: center;
+      margin-top: -10px;
+      border: solid 2px #007BFF;
+      width: 100%;
+      margin-left: 0px;
+      padding: 50px;
+      background-color: #FBFCFD;  
+      color: #007BFF;
+  }
+  /* .info:hover{
+      box-shadow: 3px 3px 3px 3px #007BFF;
+  } */
+  .list:hover{
+      margin-left: 3%;
+      transition: 870ms;
+    }
+  .list{
+      padding: 1px;
+  }
+  /* ///////////////////////////////////////////////////////////////////////// */
+  .button {
+    font-size: 1em;
+    padding: 10px;
+    color: #007BFF;
+    border: 2px solid #007BFF;
+    border-radius: 20px/50px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.3s ease-out;
+  }
+  .button:hover {
+    background: #007BFF;
+    color: #EEF1F5;
+  }
+  .overlay {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.7);
+    transition: opacity 500ms;
+    visibility: hidden;
+    opacity: 0;
+  }
+  .overlay:target {
+    visibility: visible;
+    opacity: 1;
+  }
+  .popup {
+    margin: 70px auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 5px;
+    width: 30%;
+    position: relative;
+    transition: all 5s ease-in-out;
+    
+  }
+  .popup .close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    transition: all 200ms;
+    font-size: 30px;
+    font-weight: bold;
+    text-decoration: none;
+    color: #333;
+  }
+  .popup .close:hover {
+    color: #007BFF;
+  }
+  .popup .content {
+    max-height: 30%;
+    overflow: auto;
+  }
+  .change{
+      margin-left: 700px;
+  }
+  /* ///////////////////////////////////////////////////////////////////////////////////// */
+    
+    .header-blog .container {
+        margin-top: -100px;
+      position: relative;
+      height: 100%;
+      margin-left: 10px;
+      display: none;
+
+    }
+    
+    .userh1{
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      text-transform: uppercase;
+      margin:0;
+      padding:0;
+      letter-spacing: 5px;
+      color:#007bff;
+    }
+    
+    .userh1:before{
+      content: attr(data-text);
+      position:absolute;
+      top: 0px;
+      left:0px;
+      width:100%;
+      height:100%;
+      color:#007bff;
+      overflow: hidden;
+      border-right: 1px solid #FFF;
+      animation: type 5s steps(50) infinite;
+      white-space:nowrap;
+    }
+    
+    @keyframes type {
+      
+      0%{
+        width:0%;
+      }
+      
+      50%{
+        width:100%;
+        
+      }
+      
+      100%{
+        width:0%;
+      }
+      
+    }
+  
+  
   }

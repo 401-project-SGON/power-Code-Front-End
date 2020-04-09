@@ -12,6 +12,7 @@
 .overview{
     margin: 0px 0px 0px 100px;
     width: 910px;
+    width: 70%;
     height: auto;
     /* font-family: 'Spicy Rice', cursive */
 
@@ -25,7 +26,8 @@
     float: right;
     font-family: 'Roboto Condensed', sans-serif;
      border-radius: 10px;
-     width:400px;
+     /* width:400px; */
+     width: 70%;
       height:235px ;
       /* margin-right: 40px; */
      box-shadow:   0.2em 0.2em 0.2em 0.2em  #417bff59;
@@ -114,11 +116,12 @@ margin-left: 27%;}
 }
 
 .courseV{
-    width:670px;
+    /* width:670px; */
+    width: 38%;
     height:235px; 
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 992px) {
 
     .courseName{
         display: inline-block;
@@ -133,8 +136,9 @@ margin-left: 27%;}
     
     .overview{
         margin: 0px 0px 0px 8px;
-        width: 236px;
-    
+        /* width: 236px; */
+        width: 76%;
+
         height: auto;
         /* font-family: 'Spicy Rice', cursive */
     
@@ -148,7 +152,7 @@ margin-left: 27%;}
         float: right;
         font-family: 'Roboto Condensed', sans-serif;
          border-radius: 10px;
-         width: 160px;
+         width: 70%;
          height:145px ;
           /* margin-right: 40px; */
          box-shadow:   0.2em 0.2em 0.2em 0.2em  #417bff59;
@@ -237,7 +241,8 @@ margin-left: 27%;}
     }
     
     .courseV{
-        width:137px;
+        /* width:137px; */
+        width: 38%;
         height:148px; 
     }
 
