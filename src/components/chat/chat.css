@@ -4,7 +4,7 @@
 
 }
 
-.iframe{ 
+.chat{ 
     /* width:493px; */
     width: 100%;
 
@@ -13,7 +13,7 @@
 
 @media only screen and (max-width: 992px) {
 
-.iframe{
+.chat{
     width: 100%;
 
 }

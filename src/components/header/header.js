@@ -13,6 +13,14 @@ import './header.css'
 
 const ChatBox = () => {
     return (
+        <>
+        <style type="text/css">
+    {`
+    .dropdown-menu{
+        min-width: 33rem;
+    }
+    `}
+  </style>
         <section className='c' >
             <Dropdown>
                 <Dropdown.Toggle as={'href'} id="dropdown-basic-button" title="let's chat">
@@ -25,6 +33,7 @@ const ChatBox = () => {
 
             </Dropdown>
         </section>
+        </>
     )
 }
 
