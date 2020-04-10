@@ -29,7 +29,7 @@ const Subject = (props) => {
 
             <If condition={show}>
 
-            <section className='code'> <p className='code1'> {props.reducer.selectedSubject.example}</p></section>
+            <section style={{width:'100%'}} className='code'> <p className='code1'> {props.reducer.selectedSubject.example}</p></section>
             <section > <pre><Code code={props.reducer.selectedSubject.example}/></pre></section>
 
             </If>
