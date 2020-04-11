@@ -13,6 +13,7 @@ const Feedback =(props)=>{
     const handlechange = (e)=>{
         if(e.target.name==='feedback')setFeedback({[e.target.name]: e.target.value})
         if(e.target.name==='suggestions')setSuggestions({[e.target.name]: e.target.value})
+       
     }
     const handlesubmit = (e)=>{
         if(e) e.preventDefault()
@@ -38,7 +39,7 @@ const Feedback =(props)=>{
         <section className='feedback_form'>
         <form className='feedbackform' onSubmit={handlesubmit}>
         
-                <textarea className='texta'  placeholder='Enter your feedback' onChange={handlechange}  width="460" height="146" name='' required/>
+                <textarea className='texta'  placeholder='Enter your feedback' onChange={handlechange}  width="460" height="146" name='feedback' required/>
             <hr />
                 <textarea className='texta' placeholder='Enter your suggestions' onChange={handlechange}  name='suggestions'/>
         <div><img src='https://media2.giphy.com/media/10EYU9Z0wDPa6c/source.gif' height='100' width='300' name="feedd"/></div>

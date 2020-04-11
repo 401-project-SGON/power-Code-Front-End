@@ -161,7 +161,6 @@ export const sendFeedback = (payload)=>{
             cache: 'no-cache',
             headers: {
                 'Content-Type': 'application/json'
-                // 'Content-Type': 'application/x-www-form-urlencoded',
               },
             body:JSON.stringify(payload)
           })
