@@ -1,0 +1,22 @@
+.courseName{
+    display: inline-block;
+    /* margin: 40px 20px 60px 60px; */
+    margin: 0px 0px 0px 62px;
+
+    align-items: center;
+}
+
+
+
+.overview{
+    margin: 63px 0px 0px 100px;
+    width: 910px;
+    height: auto;
+}
+/* .levels{
+    
+} */
+
+/* .lessons{
+
+} */
